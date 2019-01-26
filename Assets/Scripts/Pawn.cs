@@ -11,6 +11,11 @@ namespace Home.Core
         private PlayerController controller;
         private bool inputEnabled = false;
 
+        private void Start()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
         private void Update()
         {
             if (this.inputEnabled && UpdateActions != null)
