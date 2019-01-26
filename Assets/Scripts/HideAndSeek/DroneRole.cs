@@ -24,7 +24,8 @@ public class DroneRole : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && isIt)
         {
             Debug.Log("Found " + other.gameObject.name);
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<DroneRole>().isIt = true;
+            //Destroy(other.gameObject);
             //collision.gameObject.GetComponent<PhotonView>().RPC("Tag", RpcTarget.All, collision.gameObject.name);
             //PhotonView photonView = PhotonView.Get(this);
             //photonView.RPC("Tag", RpcTarget.All, other.name);

@@ -6,11 +6,14 @@ namespace Home.HNS
 {
     public class DroneMovement : MonoBehaviour
     {
-        public Camera cam;
-
         public float movementSpeed = 1f;
         public float rotationSpeed = 1f;
 
+        //Pitch
+        public float pitchMax = 1f;
+        public float pitchCurrent = 0f;
+        public float pitchRate = 5f;
+        public bool isPitchingForward = false;
         //Boost
         public float boostFuel;
         public float boostMaxFuel = 10f;
@@ -64,16 +67,51 @@ namespace Home.HNS
         {
             if (!isOverheating)
             {
+                PitchForward(movement.z);
                 movement = movement * Time.deltaTime * movementSpeed;
 
+                // Seperates horizontal and side to side movement from pitch and roll
+                Vector3 forward = transform.forward;
+                forward.y = 0;
+                Vector3 right = transform.right;
+                right.y = 0;
                 //moves drone relative to drone's rotation
-                transform.position += transform.right * movement.x + transform.up * movement.y + transform.forward * movement.z;
+
+                transform.position += right * movement.x + transform.up * movement.y + forward * movement.z;
+                /*Vector3 rotationY = new Vector3(0, transform.rotation.eulerAngles.y, 0);
+
+                transform.rotation = Quaternion * Quaternion.Euler(movement.z * 5f, 0, 0);
+                Debug.Log(Quaternion.Euler(movement.z * 5f, 0, 0));
+                Debug.Log("Transform Rotation " + transform.rotation);
+                */
             }
+        }
+
+        public void PitchForward(float pitch)
+        {
+            isPitchingForward = true;
+            //Vector3 rotationY = new Vector3(0, transform.rotation.eulerAngles.y, 0);
+            Debug.Log("Pitch Euler " + transform.rotation.eulerAngles.x);
+
+            if ((transform.rotation.eulerAngles.x <= pitchMax && pitch > 0)
+                || (transform.rotation.eulerAngles.x > 0 && transform.rotation.eulerAngles.x < 90 && pitch < 0)
+                || (transform.rotation.eulerAngles.x >= 360 - pitchMax && pitch < 0)
+                || (transform.rotation.eulerAngles.x >= 270 - pitchMax && pitch > 0))
+            {
+
+                //Debug.Log("Pitch " + pitch);
+                transform.rotation = transform.rotation * Quaternion.Euler(pitch * pitchRate, 0, 0);
+            }
+            //Debug.Log(Quaternion.Euler(movement.z * 5f, 0, 0));
+            //Debug.Log("Transform Rotation " + transform.rotation);
         }
 
         public void Rotate(Vector3 rotation)
         {
-            rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation * rotationSpeed));
+
+            //transform.rotation = transform.rotation * Quaternion.Euler(rotation * rotationSpeed);
+            transform.RotateAround(transform.position, Vector3.up, rotation.y);
+
             //transform.RotateAround(transform.position, Vector3.up, rotation.y);
         }
 
