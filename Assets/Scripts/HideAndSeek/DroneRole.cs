@@ -19,12 +19,13 @@ public class DroneRole : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && isIt)
         {
-            Debug.Log("Found " + other.name);
-            other.GetComponent<PhotonView>().RPC("Tag", RpcTarget.All, other.name);
+            Debug.Log("Found " + other.gameObject.name);
+            Destroy(other.gameObject);
+            //collision.gameObject.GetComponent<PhotonView>().RPC("Tag", RpcTarget.All, collision.gameObject.name);
             //PhotonView photonView = PhotonView.Get(this);
             //photonView.RPC("Tag", RpcTarget.All, other.name);
         }

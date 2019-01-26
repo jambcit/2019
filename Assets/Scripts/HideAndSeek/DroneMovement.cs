@@ -12,8 +12,8 @@ namespace Home.HNS
         public float rotationSpeed = 1f;
 
         //Boost
-        public float boostFuel = 10f;
-        private float boostMaxFuel;
+        public float boostFuel;
+        public float boostMaxFuel = 10f;
         public float boostMultiplier = 1f;
         public float boostRefuelRate = .1f;
         public float boostUseRate = .1f;
@@ -36,7 +36,7 @@ namespace Home.HNS
         public void Start()
         {
             rb = GetComponent<Rigidbody>();
-            boostMaxFuel = boostFuel;
+            boostFuel = boostMaxFuel;
             overheatTimer = overheatTimeLength;
             boostResetTimer = boostResetTimeLength;
         }
@@ -116,6 +116,11 @@ namespace Home.HNS
                 //boostFuel = boostMaxFuel;
                 Debug.Log(this.name + " has cooled off");
             }
+        }
+
+        public float GetBoostMaxFuel()
+        {
+            return boostMaxFuel;
         }
     }
 }
