@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SandboxGUILookAt : MonoBehaviour
+public class LookAt : MonoBehaviour
 {
     [SerializeField]
     Transform target;
