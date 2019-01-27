@@ -1,16 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Home.Core;
 using UnityEngine;
+using Photon.Pun;
 
 namespace Home.Sandbox
 {
-    enum GameMode
-    {
-        None,
-        HideAndSeekTag,
-        FPS
-    }
-
     // interactable gamemode
     // if gamemode show the popup
     
@@ -51,11 +44,6 @@ namespace Home.Sandbox
             else if (curGuage >= MAX_GUAGE)
             {
                 ResetGuage();
-                SandboxObjectInteraction[] interactionObjects = FindObjectsOfType<SandboxObjectInteraction>();
-                foreach (SandboxObjectInteraction interactionObject in interactionObjects)
-                {
-                    interactionObject.gameObject.SetActive(false);
-                }
                 Photon.Pun.PhotonNetwork.CurrentRoom.SetCustomProperties(new ExitGames.Client.Photon.Hashtable { { "gm", gameMode } });
             }
         }
@@ -79,12 +67,15 @@ namespace Home.Sandbox
         {
             if (other.gameObject.CompareTag("Player") && isInteractable)
             {
-                MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
-                myMeshRenderer.material.color = Color.red;
+                if (other.GetComponent<PhotonView>().IsMine)
+                {
+                    MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
+                    myMeshRenderer.material.color = Color.red;
 
-                HUDInteractText.gameObject.SetActive(true);
+                    HUDInteractText.gameObject.SetActive(true);
 
-                other.GetComponentInChildren<SandboxPawn>().MySandboxCharacterInteraction.updateInteractableObject(this);
+                    other.GetComponentInChildren<SandboxPawn>().MySandboxCharacterInteraction.updateInteractableObject(this);
+                }
             }
         }
 
@@ -92,13 +83,16 @@ namespace Home.Sandbox
         {
             if (other.gameObject.CompareTag("Player") && isInteractable)
             {
-                MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
-                myMeshRenderer.material.color = Color.white;
+                if (other.GetComponent<PhotonView>().IsMine)
+                {
+                    MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
+                    myMeshRenderer.material.color = Color.white;
 
-                HUDInteractText.gameObject.SetActive(false);
+                    HUDInteractText.gameObject.SetActive(false);
 
-                other.GetComponentInChildren<SandboxPawn>().MySandboxCharacterInteraction.updateInteractableObject(null);
-                ResetGuage();
+                    other.GetComponentInChildren<SandboxPawn>().MySandboxCharacterInteraction.updateInteractableObject(null);
+                    ResetGuage();
+                }
             }
         }
 

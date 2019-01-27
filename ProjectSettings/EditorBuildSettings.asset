@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 34c53c3b01d16e948afbfe7eb6428ffd
   - enabled: 0
-    path: Assets/Scenes/House.unity
+    path: Assets/Scenes/HouseTemplate.unity
     guid: b16972d6d40194c498c1ebf3b6c7c5a9
   - enabled: 0
     path: Assets/Scenes/SandboxCharacterTest.unity

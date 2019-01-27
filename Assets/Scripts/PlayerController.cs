@@ -67,11 +67,11 @@ namespace Home.Core
         {
             if (info.photonView.IsMine)
             {
+                SetGameModePawn(GameManager.GameMode);
                 foreach (Pawn pawn in myPawns)
                 {
                     pawn.Initialize();
                 }
-                SetGameModePawn(GameManager.GameMode);
             }
             else
             {
