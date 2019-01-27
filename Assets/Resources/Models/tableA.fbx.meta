@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: 9249b86219d2a244b8c5899e98ffbbfb
+guid: 90100e23078380949aae0f6b249980e5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: bullet
+    100000: tableA
+    100002: //RootNode
+    400000: tableA
+    400002: //RootNode
+    2100000: furnituresA_mt
+    2300000: tableA
+    3300000: tableA
+    4300000: tableA
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +43,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 0.03
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
@@ -71,7 +73,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
