@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Home.UI;
+using UnityEngine;
 
 namespace Home.Core
 {
@@ -6,12 +7,19 @@ namespace Home.Core
     {
         public static NetworkManager NetworkManager { get; private set; }
         public static PlayerController LocalPlayer { get; set; }
-        public static GameMode GameMode = GameMode.Sandbox;
+        public static GameMode GameMode { get; set; } = GameMode.Sandbox;
+        public static GameModePopup GameModePopup { get; set; }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
         {
             NetworkManager = new NetworkManager();
+        }
+
+        public static void UpdateGameMode(GameMode gameMode)
+        {
+            GameMode = gameMode;
+            GameModePopup.Display(GameMode);
         }
     }
 }
