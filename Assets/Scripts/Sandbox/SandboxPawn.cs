@@ -11,8 +11,9 @@ namespace Home.Sandbox
 
         SandboxCharacterMovement mySandboxCharacterMovement;
 
-        public override void Initialize()
+        public override void Initialize(PlayerController myPlayerController)
         {
+            this.myPlayerController = myPlayerController;
             mySandboxCharacterMovement = new SandboxCharacterMovement(transform, Camera.main, new Vector3(0,0,0), this.GetComponent<Rigidbody>());
             MySandboxCharacterInteraction = new SandboxCharacterInteraction();
 

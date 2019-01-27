@@ -34,8 +34,6 @@ namespace Home.Sandbox
 
         public void StartInteraction()
         {
-            Debug.Log(name + "Start Interact!");
-
             if (curGuage < MAX_GUAGE)
             {
                 curGuage += INC_GUAGE;

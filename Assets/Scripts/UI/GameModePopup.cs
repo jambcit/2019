@@ -48,8 +48,7 @@ namespace Home.UI
             }
 
             gameObject.SetActive(false);
-
-            GameManager.LocalPlayer.SetGameModePawn(GameManager.GameMode);
+            GameManager.SetupGameMode();
         }
     }
 }

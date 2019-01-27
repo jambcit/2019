@@ -19,8 +19,9 @@ namespace Home.Fps
 
         private DartPool dartPool;
 
-        public override void Initialize()
+        public override void Initialize(PlayerController myPlayerController)
         {
+            this.myPlayerController = myPlayerController;
             Camera myCamera = Camera.main;
             //myCamera.transform.position = cameraView.position;
             Rigidbody myBody = GetComponent<Rigidbody>();
