@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: c6e4a6e784c5a3442b55d5a05b2acf86
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bed_pCube1
+    100002: bed_pCube2
+    100004: cabinet
+    100006: door_rot
+    100008: doorcentre
+    100010: floor
+    100012: floor1
+    100014: floor1 1
+    100016: floor2
+    100018: floor2 1
+    100020: floor3
+    100022: floor3 1
+    100024: floor4
+    100026: floor4 1
+    100028: floor5
+    100030: floor6
+    100032: floor7
+    100034: floor8
+    100036: //RootNode
+    100038: furnitures_0001_rack_1
+    100040: furnitures_0001_rack_5
+    100042: group4
+    100044: group5
+    100046: group6
+    100048: pCube10
+    100050: pCube11
+    100052: pCube12
+    100054: pCube13
+    100056: pCube14
+    100058: pCube15
+    100060: pCube16
+    100062: pCube17
+    100064: pCube18
+    100066: pCube7
+    100068: pCube8
+    100070: pCube9
+    100072: pCylinder3
+    100074: polySurface1
+    100076: polySurface2
+    100078: polySurface2 1
+    100080: Skin_ZSphere_4
+    100082: wall
+    100084: walldoor
+    100086: walldoor_gp
+    100088: wallside
+    100090: wallwindow
+    400000: bed_pCube1
+    400002: bed_pCube2
+    400004: cabinet
+    400006: door_rot
+    400008: doorcentre
+    400010: floor
+    400012: floor1
+    400014: floor1 1
+    400016: floor2
+    400018: floor2 1
+    400020: floor3
+    400022: floor3 1
+    400024: floor4
+    400026: floor4 1
+    400028: floor5
+    400030: floor6
+    400032: floor7
+    400034: floor8
+    400036: //RootNode
+    400038: furnitures_0001_rack_1
+    400040: furnitures_0001_rack_5
+    400042: group4
+    400044: group5
+    400046: group6
+    400048: pCube10
+    400050: pCube11
+    400052: pCube12
+    400054: pCube13
+    400056: pCube14
+    400058: pCube15
+    400060: pCube16
+    400062: pCube17
+    400064: pCube18
+    400066: pCube7
+    400068: pCube8
+    400070: pCube9
+    400072: pCylinder3
+    400074: polySurface1
+    400076: polySurface2
+    400078: polySurface2 1
+    400080: Skin_ZSphere_4
+    400082: wall
+    400084: walldoor
+    400086: walldoor_gp
+    400088: wallside
+    400090: wallwindow
+    2100000: aiToon1
+    2100002: lambert1
+    2100004: Skin_ZSphere_4_lambert
+    2300000: bed_pCube1
+    2300002: bed_pCube2
+    2300004: cabinet
+    2300006: doorcentre
+    2300008: floor
+    2300010: floor1
+    2300012: floor1 1
+    2300014: floor2
+    2300016: floor2 1
+    2300018: floor3
+    2300020: floor3 1
+    2300022: floor4
+    2300024: floor4 1
+    2300026: floor5
+    2300028: floor6
+    2300030: floor7
+    2300032: floor8
+    2300034: furnitures_0001_rack_1
+    2300036: furnitures_0001_rack_5
+    2300038: pCube10
+    2300040: pCube11
+    2300042: pCube12
+    2300044: pCube13
+    2300046: pCube14
+    2300048: pCube15
+    2300050: pCube16
+    2300052: pCube17
+    2300054: pCube18
+    2300056: pCube7
+    2300058: pCube8
+    2300060: pCube9
+    2300062: pCylinder3
+    2300064: polySurface1
+    2300066: polySurface2
+    2300068: polySurface2 1
+    2300070: Skin_ZSphere_4
+    2300072: wall
+    2300074: walldoor
+    2300076: wallside
+    2300078: wallwindow
+    3300000: bed_pCube1
+    3300002: bed_pCube2
+    3300004: cabinet
+    3300006: doorcentre
+    3300008: floor
+    3300010: floor1
+    3300012: floor1 1
+    3300014: floor2
+    3300016: floor2 1
+    3300018: floor3
+    3300020: floor3 1
+    3300022: floor4
+    3300024: floor4 1
+    3300026: floor5
+    3300028: floor6
+    3300030: floor7
+    3300032: floor8
+    3300034: furnitures_0001_rack_1
+    3300036: furnitures_0001_rack_5
+    3300038: pCube10
+    3300040: pCube11
+    3300042: pCube12
+    3300044: pCube13
+    3300046: pCube14
+    3300048: pCube15
+    3300050: pCube16
+    3300052: pCube17
+    3300054: pCube18
+    3300056: pCube7
+    3300058: pCube8
+    3300060: pCube9
+    3300062: pCylinder3
+    3300064: polySurface1
+    3300066: polySurface2
+    3300068: polySurface2 1
+    3300070: Skin_ZSphere_4
+    3300072: wall
+    3300074: walldoor
+    3300076: wallside
+    3300078: wallwindow
+    4300000: pCube8
+    4300002: pCube13
+    4300004: pCube9
+    4300006: pCylinder3
+    4300008: polySurface2
+    4300010: pCube10
+    4300012: pCube12
+    4300014: pCube11
+    4300016: pCube15
+    4300018: pCube14
+    4300020: pCube16
+    4300022: Skin_ZSphere_4
+    4300024: pCube18
+    4300026: pCube17
+    4300028: polySurface1
+    4300030: pCube7
+    4300032: wallwindow
+    4300034: wallside
+    4300036: floor
+    4300038: doorcentre
+    4300040: polySurface2
+    4300042: walldoor
+    4300044: wall
+    4300046: cabinet
+    4300048: furnitures_0001_rack_1
+    4300050: furnitures_0001_rack_5
+    4300052: bed_pCube1
+    4300054: bed_pCube2
+    4300056: floor1
+    4300058: floor2
+    4300060: floor3
+    4300062: floor4
+    4300064: floor5
+    4300066: floor6
+    4300068: floor7
+    4300070: floor8
+    4300072: floor1
+    4300074: floor2
+    4300076: floor3
+    4300078: floor4
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1236,7 +1236,6 @@ MonoBehaviour:
   - {fileID: 6830963377025102540}
   - {fileID: 8841887011506413732}
   - {fileID: 4907273623281340467}
-  controlledPawn: {fileID: 6830963377025102540}
   registeredAxes:
   - Horizontal
   - Vertical
