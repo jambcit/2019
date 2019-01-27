@@ -5,11 +5,20 @@ namespace Home.HideAndSeek
 {
     public class HideAndSeekPawn : Pawn
     {
-        HideAndSeekCharacterMovement hideAndSeekCharacterMovement;
+        HideAndSeekCharacterMovement myHideAndSeekCharacterMovement;
 
         public override void Initialize()
         {
-            hideAndSeekCharacterMovement = new HideAndSeekCharacterMovement();
+            myHideAndSeekCharacterMovement
+                = new HideAndSeekCharacterMovement(
+                        this.GetComponent<Rigidbody>()
+                        , transform
+                    );
+
+            UpdateActions += myHideAndSeekCharacterMovement.Update;
+
+            OnTriggerEnterActions += myHideAndSeekCharacterMovement.OnTriggerEnter;
+            OnCollisionExitActions += myHideAndSeekCharacterMovement.OnCollisionExit;
         }
     }
 }

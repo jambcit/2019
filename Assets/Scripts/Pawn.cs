@@ -5,6 +5,8 @@ namespace Home.Core
     public delegate void UpdateActionDelegate();
     public delegate void LateUpdateActionDelegate();
     public delegate void FixedUpdateActionDelegate();
+    public delegate void OnTriggerEnterActionDelegate(Collider other);
+    public delegate void OnTriggerExitActionDelegate(Collider other);
     public delegate void OnCollisionEnterActionDelegate(Collision other);
     public delegate void OnCollisionExitActionDelegate(Collision other);
 
@@ -13,6 +15,8 @@ namespace Home.Core
         protected UpdateActionDelegate UpdateActions;
         protected LateUpdateActionDelegate LateUpdateActions;
         protected FixedUpdateActionDelegate FixedUpdateActions;
+        protected OnTriggerEnterActionDelegate OnTriggerEnterActions;
+        protected OnTriggerExitActionDelegate OnTriggerExitActions;
         protected OnCollisionEnterActionDelegate OnCollisionEnterActions;
         protected OnCollisionExitActionDelegate OnCollisionExitActions;
         protected PlayerController myPlayerController;
@@ -69,6 +73,22 @@ namespace Home.Core
             if (this.inputEnabled && OnCollisionExitActions != null)
             {
                 OnCollisionExitActions.Invoke(other);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (this.inputEnabled && OnTriggerEnterActions != null)
+            {
+                OnTriggerEnterActions.Invoke(other);
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (this.inputEnabled && OnTriggerExitActions != null)
+            {
+                OnTriggerExitActions.Invoke(other);
             }
         }
     }
