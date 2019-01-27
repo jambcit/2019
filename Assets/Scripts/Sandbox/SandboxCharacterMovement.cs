@@ -4,50 +4,49 @@ using UnityEngine;
 
 namespace Home.Sandbox
 {
-    public class SandboxCharacterMovement : SandboxPawn
+    public class SandboxCharacterMovement
     {
         //TODO definition of character id?
-
-        float moveSpeed = 6f;            // Player's speed when walking.
-        float rotationSpeed = 6f;
-        float jumpHeight = 300f;         // How high Player jumps
-
-        [Range(0, Mathf.Infinity)] public float cameraDistance = 10;
-        private Vector3 cameraStart;
+        float moveSpeed;            // Player's speed when walking.
+        float rotationSpeed;
+        float jumpHeight;         // How high Player jumps
+        
         Vector3 moveDirection;
         public Vector3 lookAtValue;
 
         Rigidbody rb;
-        public float mouseX;
-        public float mouseY;
-
         public float horizontal;
         public float vertical;
         public Vector3 inputDir;
+        
+        private Camera myCam;
+        private Transform myTransform;
+        
         public bool onGround;
 
-        private Camera myCam;
-        // Using the Awake function to set the references
-        void Awake()
+        //start position, not implemented yet
+        Vector3 startingPosition;
+
+
+        public SandboxCharacterMovement(Transform myTransform, Camera myCam, Vector3 startingPosition, Rigidbody rb,
+                                        float moveSpeed = 6f, float rotationSpeed = 6f, float jumpHeight = 300f)
         {
-            myCam = Camera.main;
-            rb = GetComponent<Rigidbody>();
-            cameraStart = new Vector3(0, 0, -cameraDistance);
+            this.myTransform = myTransform;
+            this.myCam = myCam;
+            this.startingPosition = startingPosition;
+            this.moveSpeed = moveSpeed;
+            this.rotationSpeed = rotationSpeed;
+            this.jumpHeight = jumpHeight;
+            this.rb = rb;
         }
-
-        void Update()
+        
+        public void Update()
         {
-            mouseX += Input.GetAxis("Mouse X");
-            mouseY -= Input.GetAxis("Mouse Y");
-            mouseY = Mathf.Clamp(mouseY, -60, 60);
-
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
-
-            
         }
 
-        void FixedUpdate()
+        public void FixedUpdate()
         {
             Move();
             if (onGround && Input.GetKeyDown(KeyCode.Space))
@@ -55,24 +54,19 @@ namespace Home.Sandbox
                 Jump();
             }
         }
-
-        void LateUpdate()
-        {
-            RotateCamera();
-        }
         
         void Move()
         {
-            Vector3 forward = new Vector3(transform.position.x - myCam.transform.position.x, 0, transform.position.z - myCam.transform.position.z).normalized;
+            Vector3 forward = new Vector3(myTransform.position.x - myCam.transform.position.x, 0, myTransform.position.z - myCam.transform.position.z).normalized;
             Vector3 right = Vector3.Cross(Vector3.up, forward).normalized;
 
             inputDir = (right * horizontal) + (forward * vertical);
-            Vector3 lookAtTarget = transform.position + inputDir;
+            Vector3 lookAtTarget = myTransform.position + inputDir;
 
             if (inputDir != Vector3.zero)
             {
-                transform.LookAt(lookAtTarget);
-                transform.position += transform.forward * moveSpeed * Time.deltaTime;
+                myTransform.LookAt(lookAtTarget);
+                myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
             }
         }
 
@@ -81,23 +75,14 @@ namespace Home.Sandbox
             rb.AddForce(new Vector3(0.0f, jumpHeight, 0.0f));
         }
 
-        void RotateCamera()
+        public void OnCollisionEnter(Collision other)
         {
-            Quaternion rotation = Quaternion.Euler(mouseY, mouseX, 0.0f);
-
-            myCam.transform.position = transform.position + rotation * cameraStart;
-            myCam.transform.LookAt(transform);
+            onGround = other.gameObject.name.Equals("Ground");
         }
 
-
-        private void OnCollisionEnter(Collision collision)
+        public void OnCollisionExit(Collision other)
         {
-            onGround = collision.gameObject.name.Equals("Ground");
-        }
-
-        private void OnCollisionExit(Collision collision)
-        {
-            onGround = !collision.gameObject.name.Equals("Ground");
+            onGround = !other.gameObject.name.Equals("Ground");
         }
     }
 
