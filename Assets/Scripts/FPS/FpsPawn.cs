@@ -6,6 +6,8 @@ namespace Home.Fps
 {
     public class FpsPawn : Pawn
     {
+        [Header("General")]
+        [SerializeField] private Transform cameraView;
         [Header("Darts")]
         [SerializeField] private GameObject dartPrefab;
         [Range(0, 999)] [SerializeField] private int dartCount = 20;
@@ -20,8 +22,9 @@ namespace Home.Fps
         public override void Initialize()
         {
             Camera myCamera = Camera.main;
+            //myCamera.transform.position = cameraView.position;
             Rigidbody myBody = GetComponent<Rigidbody>();
-            FpsCameraComponent cameraComponent = new FpsCameraComponent(myCamera, transform, rotationSpeed);
+            FpsCameraComponent cameraComponent = new FpsCameraComponent(myCamera, transform, cameraView, rotationSpeed);
             UpdateActions += cameraComponent.Update;
 
             FpsMoveComponent moveComponent = new FpsMoveComponent(myCamera, myBody, moveSpeed);
