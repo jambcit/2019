@@ -7,6 +7,8 @@ public class DroneRole : MonoBehaviour
 {
 
     public bool isIt;
+    private int tagCount = 0;
+    private bool isClient = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class DroneRole : MonoBehaviour
         {
             Debug.Log("Found " + other.gameObject.name);
             other.gameObject.GetComponent<DroneRole>().isIt = true;
+            ++tagCount;
             //Destroy(other.gameObject);
             //collision.gameObject.GetComponent<PhotonView>().RPC("Tag", RpcTarget.All, collision.gameObject.name);
             //PhotonView photonView = PhotonView.Get(this);
@@ -35,5 +38,15 @@ public class DroneRole : MonoBehaviour
     void Tag(string name)
     {
         Debug.Log("Found " + name);
+    }
+
+
+    // Called by the HideAndSeekGameModeManager GameOver()
+    void PostScore()
+    {
+        if (isClient)
+        {
+
+        }
     }
 }

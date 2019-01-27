@@ -42,6 +42,14 @@ namespace Home.HNS
             {
                 drone.Boost();
             }
+
+            //Reset Rotation
+            if (Input.GetKey(KeyCode.Q))
+            {
+                drone.transform.rotation = Quaternion.identity;
+                drone.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                drone.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            }
         }
     }
 }

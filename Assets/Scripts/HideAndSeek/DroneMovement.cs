@@ -10,10 +10,12 @@ namespace Home.HNS
         public float rotationSpeed = 1f;
 
         //Pitch
+        [Range(0, 90)]
         public float pitchMax = 1f;
         public float pitchCurrent = 0f;
         public float pitchRate = 5f;
         public bool isPitchingForward = false;
+        public bool isPitchingHorizontal = false;
         //Boost
         public float boostFuel;
         public float boostMaxFuel = 10f;
@@ -62,12 +64,29 @@ namespace Home.HNS
             {
                 Overheat();
             }
+            if (!isPitchingForward)
+            {
+                PitchForwardDampen();
+            }
+            if (!isPitchingHorizontal)
+            {
+                PitchHorizontalDampen();
+            }
         }
         public void Move(Vector3 movement)
         {
             if (!isOverheating)
             {
-                PitchForward(movement.z);
+                //Debug.Log("Movement Z " + movement.z);
+                if (movement.x == 0)
+                    isPitchingForward = false;
+                else
+                    PitchHorizontal(movement.x);
+                if (movement.z == 0)
+                    isPitchingForward = false;
+                else
+                    PitchForward(movement.z);
+
                 movement = movement * Time.deltaTime * movementSpeed;
 
                 // Seperates horizontal and side to side movement from pitch and roll
@@ -76,27 +95,21 @@ namespace Home.HNS
                 Vector3 right = transform.right;
                 right.y = 0;
                 //moves drone relative to drone's rotation
+                rb.AddForce((right * movement.x + transform.up * movement.y + forward * movement.z).normalized, ForceMode.Impulse);
+                //transform.position += right * movement.x + transform.up * movement.y + forward * movement.z;
 
-                transform.position += right * movement.x + transform.up * movement.y + forward * movement.z;
-                /*Vector3 rotationY = new Vector3(0, transform.rotation.eulerAngles.y, 0);
-
-                transform.rotation = Quaternion * Quaternion.Euler(movement.z * 5f, 0, 0);
-                Debug.Log(Quaternion.Euler(movement.z * 5f, 0, 0));
-                Debug.Log("Transform Rotation " + transform.rotation);
-                */
             }
         }
 
         public void PitchForward(float pitch)
         {
-            isPitchingForward = true;
             //Vector3 rotationY = new Vector3(0, transform.rotation.eulerAngles.y, 0);
-            Debug.Log("Pitch Euler " + transform.rotation.eulerAngles.x);
-
+            //Debug.Log("Pitch Euler " + transform.rotation.eulerAngles.x);
+            isPitchingForward = true;
             if ((transform.rotation.eulerAngles.x <= pitchMax && pitch > 0)
-                || (transform.rotation.eulerAngles.x > 0 && transform.rotation.eulerAngles.x < 90 && pitch < 0)
+                || (transform.rotation.eulerAngles.x > 0 && transform.rotation.eulerAngles.x < 91 && pitch < 0)
                 || (transform.rotation.eulerAngles.x >= 360 - pitchMax && pitch < 0)
-                || (transform.rotation.eulerAngles.x >= 270 - pitchMax && pitch > 0))
+                || (transform.rotation.eulerAngles.x >= 269 - pitchMax && pitch > 0))
             {
 
                 //Debug.Log("Pitch " + pitch);
@@ -104,6 +117,65 @@ namespace Home.HNS
             }
             //Debug.Log(Quaternion.Euler(movement.z * 5f, 0, 0));
             //Debug.Log("Transform Rotation " + transform.rotation);
+        }
+
+        public void PitchForwardDampen()
+        {
+
+            //Vector3 rotationY = new Vector3(0, transform.rotation.eulerAngles.y, 0);
+            //Debug.Log("Pitch Euler " + transform.rotation.eulerAngles.x);
+            //Debug.Log("IsPitchingForward " + isPitchingForward);
+            {
+                if (transform.rotation.eulerAngles.x < 1 || transform.rotation.eulerAngles.x > 359)
+                {
+
+                }
+                else if (transform.rotation.eulerAngles.x >= 1 && transform.rotation.eulerAngles.x < 91)
+                {
+                    transform.rotation = transform.rotation * Quaternion.Euler(-1f * pitchRate / 2, 0, 0);
+                }
+                else if
+                   (transform.rotation.eulerAngles.x > 269 && transform.rotation.eulerAngles.x <= 359)
+                {
+
+                    //Debug.Log("Pitch " + pitch);
+                    transform.rotation = transform.rotation * Quaternion.Euler(1f * pitchRate / 2, 0, 0);
+                }
+            }
+        }
+
+        public void PitchHorizontal(float pitch)
+        {
+            isPitchingHorizontal = true;
+            if ((transform.rotation.eulerAngles.z <= pitchMax && -pitch > 0)
+                || (transform.rotation.eulerAngles.z > 0 && transform.rotation.eulerAngles.z < 91 && -pitch < 0)
+                || (transform.rotation.eulerAngles.z >= 360 - pitchMax && -pitch < 0)
+                || (transform.rotation.eulerAngles.z >= 269 - pitchMax && -pitch > 0))
+            {
+
+                transform.rotation = transform.rotation * Quaternion.Euler(0, 0, -pitch * pitchRate);
+            }
+        }
+
+        public void PitchHorizontalDampen()
+        {
+            {
+                if (transform.rotation.eulerAngles.z < 1 || transform.rotation.eulerAngles.z > 359)
+                {
+
+                }
+                else if (transform.rotation.eulerAngles.z >= 1 && transform.rotation.eulerAngles.z < 91)
+                {
+                    transform.rotation = transform.rotation * Quaternion.Euler(0, 0, 1f * pitchRate / 2);
+                }
+                else if
+                   (transform.rotation.eulerAngles.z > 269 && transform.rotation.eulerAngles.z <= 359)
+                {
+
+                    //Debug.Log("Pitch " + pitch);
+                    transform.rotation = transform.rotation * Quaternion.Euler(0, 0, -1f * pitchRate / 2);
+                }
+            }
         }
 
         public void Rotate(Vector3 rotation)
@@ -119,7 +191,8 @@ namespace Home.HNS
         {
             if (boostFuel > 0 && !isOverheating)
             {
-                transform.position += transform.forward * boostMultiplier;
+                //transform.position += transform.forward * boostMultiplier / 10;
+                rb.AddForce(transform.forward * boostMultiplier, ForceMode.Impulse);
                 boostFuel -= boostUseRate;
                 isBoostReseting = true;
                 boostResetTimer = boostResetTimeLength;
