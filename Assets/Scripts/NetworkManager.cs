@@ -67,7 +67,7 @@
 
         private void OnSceneLoad(Scene scene, LoadSceneMode mode)
         {
-            if (scene.buildIndex == 1)
+            if (scene.buildIndex == 1 && PhotonNetwork.InRoom)
             {
                 GameObject player = PhotonNetwork.Instantiate("Player", new Vector3(0, 10, 0), Quaternion.identity);
                 PlayerController pc = player.GetComponent<PlayerController>();

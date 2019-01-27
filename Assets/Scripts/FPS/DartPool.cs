@@ -35,7 +35,8 @@ namespace Home.Fps
             dart.SetActive(true);
             dart.transform.position = position;
             dart.transform.rotation = rotation;
-            dart.GetComponent<Dart>().Shoot();
+            Dart d = dart.GetComponent<Dart>();
+            d.Shoot();
         }
     }
 }

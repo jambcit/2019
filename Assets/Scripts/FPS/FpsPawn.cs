@@ -13,8 +13,9 @@ namespace Home.Fps
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 6;
         [SerializeField] private float rotationSpeed = 1;
+        [SerializeField] private int pointsPerHit = 10;
 
-        [SerializeField] private DartPool dartPool;
+        private DartPool dartPool;
 
         public override void Initialize()
         {
@@ -31,6 +32,9 @@ namespace Home.Fps
 
             FpsGunComponent gunComponent = new FpsGunComponent(myPlayerController, this, dartPool, dartSpawn);
             UpdateActions += gunComponent.Update;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
         public override void InitializeRemote()
@@ -40,9 +44,14 @@ namespace Home.Fps
         }
 
         [PunRPC]
-        public void ShootRpc(Vector3 position, Quaternion rotation)
+        public void ShootRpc(int viewId, Vector3 position, Quaternion rotation)
         {
-            dartPool.ShootNextDart(position, rotation);
+            dartPool.ShootNextDart(viewId, position, rotation);
+        }
+
+        public void HitTarget()
+        {
+            Debug.Log("Increasing users points");
         }
     }
 }
