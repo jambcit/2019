@@ -8,10 +8,12 @@ namespace Home.Fps
         [Header("Darts")]
         [SerializeField] private GameObject dartPrefab;
         [Range(0, 999)] [SerializeField] private int dartCount = 20;
+        [SerializeField] private Transform dartSpawn;
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 6;
         [SerializeField] private float rotationSpeed = 1;
-        private void Awake()
+
+        public override void Initialize()
         {
             Camera myCamera = Camera.main;
             Rigidbody myBody = GetComponent<Rigidbody>();
@@ -23,7 +25,10 @@ namespace Home.Fps
             FixedUpdateActions += moveComponent.FixedUpdate;
 
             DartPool dartPool = new DartPool(dartPrefab, dartCount);
-            StartActions += dartPool.Start;
+            dartPool.Start();
+
+            FpsGunComponent gunComponent = new FpsGunComponent(myPlayerController, dartPool, dartSpawn);
+            UpdateActions += gunComponent.Update;
         }
     }
 }

@@ -2,26 +2,18 @@
 
 namespace Home.Core
 {
-    public delegate void StartActionDelegate();
     public delegate void UpdateActionDelegate();
     public delegate void LateUpdateActionDelegate();
     public delegate void FixedUpdateActionDelegate();
-    public class Pawn : MonoBehaviour
+    public abstract class Pawn : MonoBehaviour
     {
-        protected StartActionDelegate StartActions;
         protected UpdateActionDelegate UpdateActions;
         protected LateUpdateActionDelegate LateUpdateActions;
         protected FixedUpdateActionDelegate FixedUpdateActions;
-        private PlayerController controller;
+        protected PlayerController myPlayerController;
         private bool inputEnabled = false;
 
-        private void Start()
-        {
-            if (StartActions != null)
-            {
-                StartActions.Invoke();
-            }
-        }
+        public abstract void Initialize();
 
         private void Update()
         {
@@ -47,15 +39,15 @@ namespace Home.Core
             }
         }
 
-        public void Attach(PlayerController controller)
+        public void Attach(PlayerController myPlayerController)
         {
-            this.controller = controller;
+            this.myPlayerController = myPlayerController;
             this.inputEnabled = true;
         }
 
         public void Detach()
         {
-            this.controller = null;
+            this.myPlayerController = null;
             this.inputEnabled = false;
         }
     }

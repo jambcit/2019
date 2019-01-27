@@ -10,17 +10,21 @@ namespace Home.Core
         private Dictionary<string, bool> lastFrame = new Dictionary<string, bool>();
         private Dictionary<string, bool> currentFrame = new Dictionary<string, bool>();
 
+        private void Awake()
+        {
+            foreach (string axis in registeredAxes)
+            {
+                lastFrame.Add(axis, false);
+                currentFrame.Add(axis, false);
+            }
+        }
+
         private void Start()
         {
             if (controlledPawn != null)
             {
                 controlledPawn.Attach(this);
-            }
-
-            foreach (string axis in registeredAxes)
-            {
-                lastFrame.Add(axis, false);
-                currentFrame.Add(axis, false);
+                controlledPawn.Initialize();
             }
         }
 

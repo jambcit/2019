@@ -122,7 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5065ae8f2be0f43892b4e7cd2c0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dartPrefab: {fileID: 0}
+  dartPrefab: {fileID: 3352607809141148478, guid: 8d17ac5d4ca860947b1df9cf85506750,
+    type: 3}
   dartCount: 20
+  dartSpawn: {fileID: 0}
   moveSpeed: 6
   rotationSpeed: 1

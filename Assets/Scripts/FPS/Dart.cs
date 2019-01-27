@@ -1,44 +1,34 @@
-﻿namespace MyNamespace
-{
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
+﻿using UnityEngine;
 
+namespace Home.Fps
+{
     public class Dart : MonoBehaviour
     {
 
-        private const float DART_VELOCITY = 30f;
-
+        [SerializeField] private float initialVelocity = 30f;
         private Rigidbody rigidBody;
         private bool isStuck;
 
-        // Start is called before the first frame update
-        void Start()
+        public void Shoot()
         {
             rigidBody = GetComponent<Rigidbody>();
-            rigidBody.AddForce(transform.up * DART_VELOCITY, ForceMode.Impulse);
+            rigidBody.velocity = Vector3.zero;
+            rigidBody.AddForce(transform.forward * initialVelocity, ForceMode.Impulse);
             isStuck = false;
         }
-
-        // Update is called once per frame
-        void Update()
+        
+        private void Update()
         {
             if (!isStuck)
             {
-                transform.LookAt(transform.position - Vector3.Cross(rigidBody.velocity, transform.right));
+                transform.LookAt(transform.position + rigidBody.velocity);
             }
         }
 
-        private void OnCollisionEnter(Collision collision)
+        void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Collided");
+            Debug.Log("Collider");
+            isStuck = true;
         }
-
-        private void OnTriggerEnter(Collider other)
-        {
-
-        }
-
-
-    } 
+    }
 }

@@ -18,7 +18,7 @@ namespace Home.Fps
 
         public void Start()
         {
-            for (int i = 0; i <  dartCount; i++)
+            for (int i = 0; i < dartCount; i++)
             {
                 GameObject dart = Object.Instantiate(dartPrefab);
                 dart.SetActive(false);
@@ -26,7 +26,7 @@ namespace Home.Fps
             }
         }
 
-        public GameObject GetNextDart(Vector3 position, Quaternion rotation)
+        public void ShootNextDart(Vector3 position, Quaternion rotation)
         {
             GameObject dart = dartPool[dartIndex];
             dartIndex++;
@@ -34,7 +34,7 @@ namespace Home.Fps
             dart.SetActive(true);
             dart.transform.position = position;
             dart.transform.rotation = rotation;
-            return dart;
+            dart.GetComponent<Dart>().Shoot();
         }
     }
 }
