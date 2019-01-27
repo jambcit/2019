@@ -88,14 +88,14 @@ namespace Home.Sandbox
             myCam.transform.position = transform.position + rotation * cameraStart;
             myCam.transform.LookAt(transform);
         }
-        
 
-        void OnCollisionEnter(Collision collision)
+
+        private void OnCollisionEnter(Collision collision)
         {
             onGround = collision.gameObject.name.Equals("Ground");
         }
 
-        void OnCollisionExit(Collision collision)
+        private void OnCollisionExit(Collision collision)
         {
             onGround = !collision.gameObject.name.Equals("Ground");
         }
