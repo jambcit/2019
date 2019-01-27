@@ -740,6 +740,7 @@ GameObject:
   - component: {fileID: 7012621995105778466}
   - component: {fileID: 2050085862729272495}
   - component: {fileID: 2636100691113510274}
+  - component: {fileID: 5082864414019600548}
   m_Layer: 0
   m_Name: SandboxPawn
   m_TagString: Player
@@ -973,6 +974,18 @@ MonoBehaviour:
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1
+--- !u!114 &5082864414019600548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139264192307303959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291399a29b3d32a4992f3998f0a2c09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6967780847906556514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,6 +1615,7 @@ GameObject:
   - component: {fileID: 3561220205299962912}
   - component: {fileID: 4287549018621146599}
   - component: {fileID: 5396397859327031091}
+  - component: {fileID: 8599582076668786590}
   m_Layer: 0
   m_Name: FpsPawn
   m_TagString: Untagged
@@ -1784,6 +1798,18 @@ MonoBehaviour:
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1
+--- !u!114 &8599582076668786590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841887011506414323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291399a29b3d32a4992f3998f0a2c09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8841887011506414345
 GameObject:
   m_ObjectHideFlags: 0
