@@ -101,5 +101,14 @@ namespace Home.Core
                 ((Fps.FpsPawn)this).InitializeRemote();
             }
         }
+        
+        public void SetName(string Name)
+        {
+            Transform nameObject = transform.GetChild(0);
+            if (nameObject != null)
+            {
+                nameObject.GetComponent<TextMesh>().text = Name;
+            }
+        }
     }
 }
