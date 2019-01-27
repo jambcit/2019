@@ -894,6 +894,34 @@ MonoBehaviour:
     loop: 0
     spatialBlend: 1
     source: {fileID: 0}
+  - name: BGMMainMenu
+    clip: {fileID: 8300000, guid: f1b2d22461acf72458ad75c98fb271cc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: BGMSandbox
+    clip: {fileID: 8300000, guid: 1e133114d551f5243a2273f0503d454c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: BGMFps
+    clip: {fileID: 8300000, guid: 36ec64449050e1f46b39a2aebc70c16e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    spatialBlend: 1
+    source: {fileID: 0}
+  - name: BGMHns
+    clip: {fileID: 8300000, guid: e7c4f2f2ca5688441af8b30c8b844a70, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    spatialBlend: 1
+    source: {fileID: 0}
 --- !u!1 &433624959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,6 +1306,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500267019}
   m_CullTransparentMesh: 0
+--- !u!1 &510498738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 510498740}
+  - component: {fileID: 510498739}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &510498739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510498738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7169891fa11e094ca6ca0eed42f7fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &510498740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510498738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512126841
 GameObject:
   m_ObjectHideFlags: 0
