@@ -12,13 +12,11 @@ namespace Home.Core
 
         [Range(0f, 2f)]
         public float volume;
-        [Range(0f, 5f)]
+        [Range(0f, 2f)]
         public float pitch;
 
         public bool loop;
 
-        [Range(0f, 1f)]
-        public float spatialBlend;
 
         [HideInInspector]
         public AudioSource source;
