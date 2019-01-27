@@ -31,8 +31,8 @@
         {
             PhotonNetwork.LoadLevel(1);
             // Instatiate all pawns whe joining (drone, nerf gun, kid)
-            
-            
+
+
         }
 
         public void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -72,7 +72,9 @@
         {
             if (scene.buildIndex == 1)
             {
-                GameObject pawn = PhotonNetwork.Instantiate("FpsPawn", new Vector3(0, 10, 0), Quaternion.identity);
+                //GameObject pawn = PhotonNetwork.Instantiate("FpsPawn", new Vector3(0, 10, 0), Quaternion.identity);
+                GameObject pawn = PhotonNetwork.Instantiate("SandboxPawn", new Vector3(0, 10, 0), Quaternion.identity);
+
                 PlayerController pc = PhotonNetwork.Instantiate("Player", new Vector3(0, 10, 0), Quaternion.identity).GetComponent<PlayerController>();
                 pc.AttachPawn(pawn.GetComponent<Pawn>());
             }
