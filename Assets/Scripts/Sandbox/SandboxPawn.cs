@@ -5,7 +5,7 @@ namespace Home.Sandbox
 {
     public class SandboxPawn : Pawn
     {
-        void Start()
+        public override void Initialize()
         {
             UpdateActions += MoveMe;
             // LateUpdateActions += YourLateFunc;
