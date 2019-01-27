@@ -1,5 +1,6 @@
 ﻿using Home.Core;
 using UnityEngine;
+using Photon.Pun;
 
 namespace Home.Fps
 {
@@ -13,6 +14,8 @@ namespace Home.Fps
         [SerializeField] private float moveSpeed = 6;
         [SerializeField] private float rotationSpeed = 1;
 
+        private DartPool dartPool;
+
         public override void Initialize()
         {
             Camera myCamera = Camera.main;
@@ -24,11 +27,17 @@ namespace Home.Fps
             UpdateActions += moveComponent.Update;
             FixedUpdateActions += moveComponent.FixedUpdate;
 
-            DartPool dartPool = new DartPool(dartPrefab, dartCount);
+            dartPool = new DartPool(dartPrefab, dartCount);
             dartPool.Start();
 
-            FpsGunComponent gunComponent = new FpsGunComponent(myPlayerController, dartPool, dartSpawn);
+            FpsGunComponent gunComponent = new FpsGunComponent(myPlayerController, this, dartPool, dartSpawn);
             UpdateActions += gunComponent.Update;
+        }
+
+        [PunRPC]
+        public void ShootRpc(Vector3 position, Quaternion rotation)
+        {
+            dartPool.ShootNextDart(position, rotation);
         }
     }
 }

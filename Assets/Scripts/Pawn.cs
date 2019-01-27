@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
 
 namespace Home.Core
 {
     public delegate void UpdateActionDelegate();
     public delegate void LateUpdateActionDelegate();
     public delegate void FixedUpdateActionDelegate();
-    public abstract class Pawn : MonoBehaviour
+    public abstract class Pawn : MonoBehaviourPun
     {
         protected UpdateActionDelegate UpdateActions;
         protected LateUpdateActionDelegate LateUpdateActions;
