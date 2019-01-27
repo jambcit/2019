@@ -12,8 +12,11 @@ public class LookAt : MonoBehaviour
     {
         if(target != null)
         {
-            
-            transform.LookAt(new Vector3(target.position.x, target.position.y, target.position.z));
+            transform.LookAt(target);
+        }
+        else
+        {
+            transform.LookAt(Camera.main.transform);
         }
     }
 }

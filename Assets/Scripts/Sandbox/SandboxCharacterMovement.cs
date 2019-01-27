@@ -10,7 +10,7 @@ namespace Home.Sandbox
 
         float moveSpeed = 6f;            // Player's speed when walking.
         float rotationSpeed = 6f;
-        float jumpHeight = 1000f;         // How high Player jumps
+        float jumpHeight = 300f;         // How high Player jumps
 
         [Range(0, Mathf.Infinity)] public float cameraDistance = 10;
         private Vector3 cameraStart;

@@ -11,20 +11,29 @@ namespace Home.Sandbox
         FPS
     }
 
-    public class SandboxObjectInteraction : MonoBehaviour
+    // interactable gamemode
+    // if gamemode show the popup
+    
+    public class SandboxObjectInteraction : SandboxPawn
     {
         public Transform HUDInteractText;
         public Transform ObjectGuage;
 
         public float curGuage = 0.000f;
+
+        public static string CHAR_OBJ_NAME = "SandboxCharacter";
         public static float INC_GUAGE = 0.0001f;
         public static float MAX_GUAGE = 0.005f;
+
+        public bool isInteractable;
 
         [SerializeField]
         GameMode gameMode;
 
         private void Start()
         {
+            isInteractable = true;
+
             if (HUDInteractText != null)
             {
                 HUDInteractText.gameObject.SetActive(false);
@@ -34,7 +43,7 @@ namespace Home.Sandbox
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.name == "Character")
+            if (other.name == CHAR_OBJ_NAME && isInteractable)
             {
                 MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
                 myMeshRenderer.material.color = Color.red;
@@ -47,7 +56,7 @@ namespace Home.Sandbox
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.name == "Character")
+            if (other.name == CHAR_OBJ_NAME && isInteractable)
             {
                 MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
                 myMeshRenderer.material.color = Color.white;
