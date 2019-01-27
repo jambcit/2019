@@ -10,8 +10,7 @@ namespace Home.Sandbox
         public SandboxCharacterInteraction MySandboxCharacterInteraction {
             get {
                 return mySandboxCharacterInteraction;
-            }
-            
+            }   
         }
 
         SandboxCharacterMovement mySandboxCharacterMovement;
@@ -33,7 +32,7 @@ namespace Home.Sandbox
 
             OnCollisionEnterActions += mySandboxCharacterMovement.OnCollisionEnter;
             OnCollisionExitActions += mySandboxCharacterMovement.OnCollisionExit;
-        }
+        }        
 
     }
 }
