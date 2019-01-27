@@ -4,12 +4,16 @@ namespace Home.Core
 {
     public delegate void UpdateActionDelegate();
     public delegate void LateUpdateActionDelegate();
-    public class Pawn : MonoBehaviour
+    public delegate void FixedUpdateActionDelegate();
+    public abstract class Pawn : MonoBehaviour
     {
         protected UpdateActionDelegate UpdateActions;
         protected LateUpdateActionDelegate LateUpdateActions;
-        private PlayerController controller;
+        protected FixedUpdateActionDelegate FixedUpdateActions;
+        protected PlayerController myPlayerController;
         private bool inputEnabled = false;
+
+        public abstract void Initialize();
 
         private void Update()
         {
@@ -27,15 +31,23 @@ namespace Home.Core
             }
         }
 
-        public void Attach(PlayerController controller)
+        private void FixedUpdate()
         {
-            this.controller = controller;
+            if (this.inputEnabled && FixedUpdateActions != null)
+            {
+                FixedUpdateActions.Invoke();
+            }
+        }
+
+        public void Attach(PlayerController myPlayerController)
+        {
+            this.myPlayerController = myPlayerController;
             this.inputEnabled = true;
         }
 
         public void Detach()
         {
-            this.controller = null;
+            this.myPlayerController = null;
             this.inputEnabled = false;
         }
     }
