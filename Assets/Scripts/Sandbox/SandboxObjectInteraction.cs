@@ -50,10 +50,13 @@ namespace Home.Sandbox
             }
             else if (curGuage >= MAX_GUAGE)
             {
-                // TODO disable all the interactable objects
-                // TODO vote
-                // Timestamp
-                //Photon.Pun.PhotonNetwork.CurrentRoom.SetCustomProperties(new ExitGames.Client.Photon.Hashtable { { "GM", gameMode } });
+                ResetGuage();
+                SandboxObjectInteraction[] interactionObjects = FindObjectsOfType<SandboxObjectInteraction>();
+                foreach (SandboxObjectInteraction interactionObject in interactionObjects)
+                {
+                    interactionObject.gameObject.SetActive(false);
+                }
+                Photon.Pun.PhotonNetwork.CurrentRoom.SetCustomProperties(new ExitGames.Client.Photon.Hashtable { { "gm", gameMode } });
             }
         }
 
