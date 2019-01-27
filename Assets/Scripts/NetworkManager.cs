@@ -6,8 +6,9 @@
     using Photon.Realtime;
     using System.Collections.Generic;
     using UnityEngine.SceneManagement;
+    using ExitGames.Client.Photon;
 
-    public class NetworkManager : IConnectionCallbacks, IMatchmakingCallbacks, ILobbyCallbacks
+    public class NetworkManager : IConnectionCallbacks, IMatchmakingCallbacks, ILobbyCallbacks, IInRoomCallbacks
     {
         public static Action RoomListUpdated;
 
@@ -36,6 +37,14 @@
         {
             UpdateCachedRoomList(roomList);
             RoomListUpdated?.Invoke();
+        }
+
+        public void OnRoomPropertiesUpdate(Hashtable propertiesThatChanged)
+        {
+            if (propertiesThatChanged.ContainsKey("gm"))
+            {
+                GameManager.UpdateGameMode((GameMode)propertiesThatChanged["gm"]);
+            }
         }
 
         private void UpdateCachedRoomList(List<RoomInfo> roomList)
@@ -89,5 +98,9 @@
         public void OnJoinedLobby() {}
         public void OnLeftLobby() {}
         public void OnLobbyStatisticsUpdate(List<TypedLobbyInfo> lobbyStatistics) {}
+        public void OnPlayerEnteredRoom(Player newPlayer) {}
+        public void OnPlayerLeftRoom(Player otherPlayer) {}
+        public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps) {}
+        public void OnMasterClientSwitched(Player newMasterClient) {}
     }
 }
