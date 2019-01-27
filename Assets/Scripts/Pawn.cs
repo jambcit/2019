@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 
 namespace Home.Core
 {
@@ -8,7 +9,7 @@ namespace Home.Core
     public delegate void OnCollisionEnterActionDelegate(Collision other);
     public delegate void OnCollisionExitActionDelegate(Collision other);
 
-    public abstract class Pawn : MonoBehaviour
+    public abstract class Pawn : MonoBehaviourPun, IPunInstantiateMagicCallback
     {
         protected UpdateActionDelegate UpdateActions;
         protected LateUpdateActionDelegate LateUpdateActions;
@@ -19,6 +20,7 @@ namespace Home.Core
         private bool inputEnabled = false;
 
         public abstract void Initialize();
+        // public abstract void InitializeRemote();
 
         private void Update()
         {
@@ -69,6 +71,14 @@ namespace Home.Core
             if (this.inputEnabled && OnCollisionExitActions != null)
             {
                 OnCollisionExitActions.Invoke(other);
+            }
+        }
+
+        public void OnPhotonInstantiate(PhotonMessageInfo info)
+        {
+            if (!info.photonView.IsMine)
+            {
+                ((Fps.FpsPawn)this).InitializeRemote();
             }
         }
     }

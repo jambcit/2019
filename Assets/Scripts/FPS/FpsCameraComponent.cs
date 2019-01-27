@@ -24,6 +24,7 @@ namespace Home.Fps
             cameraY -= Input.GetAxis("Mouse Y");
             myCamera.transform.rotation = Quaternion.Euler(cameraY, cameraX, 0);
             myCamera.transform.position = myTarget.position;
+            myTarget.rotation = Quaternion.Euler(cameraY, cameraX, 0);
         }
     }
 }

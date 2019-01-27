@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 34c53c3b01d16e948afbfe7eb6428ffd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/House.unity
     guid: b16972d6d40194c498c1ebf3b6c7c5a9
+  - enabled: 1
+    path: Assets/Scenes/FPSSandboxScene.unity
+    guid: ee832520118d3f4489721e230127cd04
   m_configObjects: {}
