@@ -6,34 +6,30 @@ namespace Home.Sandbox
 {
     public class SandboxCharacterInteraction : MonoBehaviour
     {
-        // TODO script for SandboxObjectInteract
         public SandboxObjectInteraction interactableTarget;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            //if(!character.tag.equals("Player"))
-            //{
-            //  Debug.LogError("SandboxInteract.Start(): Wrong place to attached, from " + gameObject.name);
-        }
-
-        // Update is called once per frame
         void Update()
         {
             if (interactableTarget != null
-            && Input.GetKeyDown(KeyCode.E))
+                && Input.GetKey(KeyCode.E))
             {
                 Debug.Log("Try " + interactableTarget.gameObject.name);
+
                 interactableTarget.StartInteraction();
+                //TODO holding
+            }
+
+            if (interactableTarget != null
+                && Input.GetKeyUp(KeyCode.E))
+            {
+                interactableTarget.ResetGuage();
             }
         }
 
-        void onTriggerEnter(Collision collision)
+        public void updateInteractableObject(SandboxObjectInteraction interactableTarget)
         {
-            if (collision.gameObject.name == "InteractableObject")
-            {
-                interactableTarget = collision.gameObject.GetComponent<SandboxObjectInteraction>();
-            }
+            this.interactableTarget = interactableTarget;
         }
+
     }
 }
