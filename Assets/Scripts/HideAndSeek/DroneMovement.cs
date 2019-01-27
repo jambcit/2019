@@ -79,7 +79,7 @@ namespace Home.HNS
             {
                 //Debug.Log("Movement Z " + movement.z);
                 if (movement.x == 0)
-                    isPitchingForward = false;
+                    isPitchingHorizontal = false;
                 else
                     PitchHorizontal(movement.x);
                 if (movement.z == 0)
@@ -125,22 +125,20 @@ namespace Home.HNS
             //Vector3 rotationY = new Vector3(0, transform.rotation.eulerAngles.y, 0);
             //Debug.Log("Pitch Euler " + transform.rotation.eulerAngles.x);
             //Debug.Log("IsPitchingForward " + isPitchingForward);
+            if (transform.rotation.eulerAngles.x < 1 || transform.rotation.eulerAngles.x > 359)
             {
-                if (transform.rotation.eulerAngles.x < 1 || transform.rotation.eulerAngles.x > 359)
-                {
 
-                }
-                else if (transform.rotation.eulerAngles.x >= 1 && transform.rotation.eulerAngles.x < 91)
-                {
-                    transform.rotation = transform.rotation * Quaternion.Euler(-1f * pitchRate / 2, 0, 0);
-                }
-                else if
-                   (transform.rotation.eulerAngles.x > 269 && transform.rotation.eulerAngles.x <= 359)
-                {
+            }
+            else if (transform.rotation.eulerAngles.x >= 1 && transform.rotation.eulerAngles.x < 91)
+            {
+                transform.rotation = transform.rotation * Quaternion.Euler(-1f * pitchRate / 2, 0, 0);
+            }
+            else if
+               (transform.rotation.eulerAngles.x > 269 && transform.rotation.eulerAngles.x <= 359)
+            {
 
-                    //Debug.Log("Pitch " + pitch);
-                    transform.rotation = transform.rotation * Quaternion.Euler(1f * pitchRate / 2, 0, 0);
-                }
+                //Debug.Log("Pitch " + pitch);
+                transform.rotation = transform.rotation * Quaternion.Euler(1f * pitchRate / 2, 0, 0);
             }
         }
 
@@ -154,27 +152,27 @@ namespace Home.HNS
             {
 
                 transform.rotation = transform.rotation * Quaternion.Euler(0, 0, -pitch * pitchRate);
+                Debug.Log("PitchHorizontal " + transform.rotation.eulerAngles.z);
             }
         }
 
         public void PitchHorizontalDampen()
         {
+            //Debug.Log("PitchHorizontalDampen " + transform.rotation.eulerAngles.z);
+            if (transform.rotation.eulerAngles.z < 1 || transform.rotation.eulerAngles.z > 359)
             {
-                if (transform.rotation.eulerAngles.z < 1 || transform.rotation.eulerAngles.z > 359)
-                {
 
-                }
-                else if (transform.rotation.eulerAngles.z >= 1 && transform.rotation.eulerAngles.z < 91)
-                {
-                    transform.rotation = transform.rotation * Quaternion.Euler(0, 0, 1f * pitchRate / 2);
-                }
-                else if
-                   (transform.rotation.eulerAngles.z > 269 && transform.rotation.eulerAngles.z <= 359)
-                {
+            }
+            else if (transform.rotation.eulerAngles.z >= 1 && transform.rotation.eulerAngles.z < 91)
+            {
+                transform.rotation = transform.rotation * Quaternion.Euler(0, 0, -1f * pitchRate / 2);
+            }
+            else if
+               (transform.rotation.eulerAngles.z > 269 && transform.rotation.eulerAngles.z <= 359)
+            {
 
-                    //Debug.Log("Pitch " + pitch);
-                    transform.rotation = transform.rotation * Quaternion.Euler(0, 0, -1f * pitchRate / 2);
-                }
+                //Debug.Log("Pitch " + pitch);
+                transform.rotation = transform.rotation * Quaternion.Euler(0, 0, +1f * pitchRate / 2);
             }
         }
 
