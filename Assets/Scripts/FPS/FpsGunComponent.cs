@@ -22,8 +22,14 @@ namespace Home.Fps
         {
             if (myPlayerController.GetAxisPressed("Fire1"))
             {
-                //dartPool.ShootNextDart(dartSpawn.position, dartSpawn.rotation);
-                fpsPawn.photonView.RPC("ShootRpc", Photon.Pun.RpcTarget.All, dartSpawn.position, dartSpawn.rotation);
+                if (Photon.Pun.PhotonNetwork.InRoom)
+                {
+                    fpsPawn.photonView.RPC("ShootRpc", Photon.Pun.RpcTarget.All, fpsPawn.photonView.ViewID, dartSpawn.position, dartSpawn.rotation);
+                }
+                else
+                {
+                    dartPool.ShootNextDart(fpsPawn.photonView.ViewID, dartSpawn.position, dartSpawn.rotation);
+                }
             }
         }
     }

@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using Photon.Pun;
+using Home.Core;
 
 namespace Home.Fps
 {
@@ -8,13 +10,19 @@ namespace Home.Fps
         [SerializeField] private float initialVelocity = 30f;
         private Rigidbody rigidBody;
         private bool isStuck;
+        private bool isDead;
+        private int numHits;
+        private int sourceViewId;
 
-        public void Shoot()
+        public void Shoot(int viewId)
         {
             rigidBody = GetComponent<Rigidbody>();
             rigidBody.velocity = Vector3.zero;
             rigidBody.AddForce(transform.forward * initialVelocity, ForceMode.Impulse);
             isStuck = false;
+            isDead = false;
+            numHits = 0;
+            sourceViewId = viewId;
         }
         
         private void Update()
@@ -23,11 +31,33 @@ namespace Home.Fps
             {
                 transform.LookAt(transform.position + rigidBody.velocity);
             }
+            if (!isDead)
+            {
+                if(rigidBody.velocity.magnitude < 0.5f)
+                {
+                    isDead = true;
+                    Debug.Log("Dart hit " + numHits + " times");
+                }
+            }
         }
 
         void OnTriggerEnter(Collider other)
         {
             isStuck = true;
+            if (!isDead)
+            {
+                if (other.GetComponent<FpsPawn>() != null)
+                {
+                    numHits++;
+                    if (PhotonNetwork.GetPhotonView(sourceViewId).IsMine)
+                    {
+                        int currScore = (int)PhotonNetwork.LocalPlayer.CustomProperties["score"];
+                        PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable { { "score", currScore += 10 } });
+                        isDead = true;
+                        Debug.Log(currScore);
+                    }
+                }
+            }
         }
     }
 }
