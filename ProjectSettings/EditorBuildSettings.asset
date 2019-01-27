@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/House.unity
     guid: b16972d6d40194c498c1ebf3b6c7c5a9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SandboxCharacterTest.unity
     guid: a7cda3e57177a9942a33c1d76f5da465
   - enabled: 1
