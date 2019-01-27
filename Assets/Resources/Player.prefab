@@ -636,6 +636,10 @@ GameObject:
   - component: {fileID: 6830963377025102540}
   - component: {fileID: 4244533933759079669}
   - component: {fileID: 3803473318378592700}
+  - component: {fileID: 1009061003213708263}
+  - component: {fileID: 7012621995105778466}
+  - component: {fileID: 6587124941717244949}
+  - component: {fileID: 2050085862729272495}
   m_Layer: 0
   m_Name: SandboxPawn
   m_TagString: Player
@@ -796,6 +800,91 @@ CapsuleCollider:
   m_Height: 1.6193905
   m_Direction: 1
   m_Center: {x: 0, y: 0.30969524, z: 0}
+--- !u!114 &1009061003213708263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139264192307303959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!95 &7012621995105778466
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139264192307303959}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 3b5678228bb05524aa8153076f5aa28f, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1ba003647e8c7564c94fd9b7245d8f21, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6587124941717244949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139264192307303959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 7012621995105778466}
+  m_ParameterSendBits: 127
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
+--- !u!114 &2050085862729272495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139264192307303959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47071c242858d864d8d94f91b4606057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!1 &6759579061967027527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1429,9 @@ GameObject:
   - component: {fileID: 8841887011506413732}
   - component: {fileID: 8841887011506413731}
   - component: {fileID: 8841887011506413730}
+  - component: {fileID: 3561220205299962912}
+  - component: {fileID: 7335909584277280921}
+  - component: {fileID: 5425757529317497735}
   m_Layer: 0
   m_Name: FpsPawn
   m_TagString: Untagged
@@ -1450,6 +1542,78 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!95 &3561220205299962912
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841887011506414323}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 49df862f97848bf418bab71c7f46633c, type: 3}
+  m_Controller: {fileID: 9100000, guid: e41bbbc373ab59b46933daeda8526cc6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7335909584277280921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841887011506414323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &5425757529317497735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841887011506414323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 3561220205299962912}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!1 &8841887011506414324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,7 +1802,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6206685408858759580, guid: 9ac886a9e7f521a49a98fcc4102fdc57, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9ac886a9e7f521a49a98fcc4102fdc57, type: 3}
 --- !u!4 &4955542033209234017 stripped
 Transform:
@@ -1712,7 +1877,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1085247497218810057, guid: fa519ccc204f9af4bb7e1c75401394b1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa519ccc204f9af4bb7e1c75401394b1, type: 3}
 --- !u!4 &6530816235019186077 stripped
 Transform:
