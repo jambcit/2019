@@ -38,7 +38,7 @@ namespace Home.Core
         public void Update()
         {
             //Used for testing audio
-            ///*
+            /*
             if (Input.GetKeyDown(KeyCode.Alpha3)) FindObjectOfType<AudioManager>().Play("DartFire");
             if (Input.GetKeyDown(KeyCode.Alpha4)) FindObjectOfType<AudioManager>().Play("DartLand");
             if (Input.GetKeyDown(KeyCode.Alpha5)) FindObjectOfType<AudioManager>().Play("DroneHover");
