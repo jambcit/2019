@@ -943,7 +943,6 @@ GameObject:
   - component: {fileID: 2040831814}
   - component: {fileID: 2040831815}
   - component: {fileID: 2040831809}
-  - component: {fileID: 2040831816}
   m_Layer: 0
   m_Name: SandboxCharacter
   m_TagString: Untagged
@@ -960,17 +959,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2040831808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b26faac0ca6654db0ab65d670a7f6c, type: 3}
+  m_Script: {fileID: 11500000, guid: d8634835c50bc174184ac4de8fc42342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraDistance: 10
-  lookAtValue: {x: 0, y: 0, z: 0}
-  mouseX: 0
-  mouseY: 0
-  horizontal: 0
-  vertical: 0
-  inputDir: {x: 0, y: 0, z: 0}
-  onGround: 0
 --- !u!65 &2040831810
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1079,16 +1070,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2040831816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040831808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d4f2e8a46aeb0e43aec6cbd64b4d76e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactableTarget: {fileID: 0}

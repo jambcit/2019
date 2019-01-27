@@ -14,7 +14,7 @@ namespace Home.Sandbox
     // interactable gamemode
     // if gamemode show the popup
     
-    public class SandboxObjectInteraction : SandboxPawn
+    public class SandboxObjectInteraction : MonoBehaviour
     {
         public Transform HUDInteractText;
         public Transform ObjectGuage;
@@ -37,34 +37,6 @@ namespace Home.Sandbox
             if (HUDInteractText != null)
             {
                 HUDInteractText.gameObject.SetActive(false);
-            }
-        }
-
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.name == CHAR_OBJ_NAME && isInteractable)
-            {
-                MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
-                myMeshRenderer.material.color = Color.red;
-
-                HUDInteractText.gameObject.SetActive(true);
-
-                other.GetComponent<SandboxCharacterInteraction>().updateInteractableObject(this);
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.name == CHAR_OBJ_NAME && isInteractable)
-            {
-                MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
-                myMeshRenderer.material.color = Color.white;
-
-                HUDInteractText.gameObject.SetActive(false);
-
-                other.GetComponent<SandboxCharacterInteraction>().updateInteractableObject(null);
-                ResetGuage();
             }
         }
 
@@ -100,5 +72,33 @@ namespace Home.Sandbox
                 guageMeshRenderer.material.SetColor("_Color", new Color(255, 200, 0, curGuage));
             }
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.name == CHAR_OBJ_NAME && isInteractable)
+            {
+                MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
+                myMeshRenderer.material.color = Color.red;
+
+                HUDInteractText.gameObject.SetActive(true);
+
+                other.GetComponentInChildren<SandboxPawn>().MySandboxCharacterInteraction.updateInteractableObject(this);
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.name == CHAR_OBJ_NAME && isInteractable)
+            {
+                MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
+                myMeshRenderer.material.color = Color.white;
+
+                HUDInteractText.gameObject.SetActive(false);
+
+                other.GetComponentInChildren<SandboxPawn>().MySandboxCharacterInteraction.updateInteractableObject(null);
+                ResetGuage();
+            }
+        }
+
     }
 }
