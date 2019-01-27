@@ -15,6 +15,7 @@ namespace Home.Core
 
         public void TriggerAudio(string audioName)
         {
+            Debug.Log(audioName);
             AudioManager.instance.Play(audioName);
         }
 
