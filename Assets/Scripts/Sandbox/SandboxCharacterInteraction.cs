@@ -4,11 +4,16 @@ using UnityEngine;
 
 namespace Home.Sandbox
 {
-    public class SandboxCharacterInteraction : MonoBehaviour
+    public class SandboxCharacterInteraction
     {
-        public SandboxObjectInteraction interactableTarget;
 
-        void Update()
+        private SandboxObjectInteraction interactableTarget;
+
+        public SandboxCharacterInteraction()
+        {
+        }
+
+        public void Update()
         {
             if (interactableTarget != null
                 && Input.GetKey(KeyCode.E))
@@ -16,7 +21,6 @@ namespace Home.Sandbox
                 Debug.Log("Try " + interactableTarget.gameObject.name);
 
                 interactableTarget.StartInteraction();
-                //TODO holding
             }
 
             if (interactableTarget != null
