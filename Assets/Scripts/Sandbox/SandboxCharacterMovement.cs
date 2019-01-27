@@ -77,12 +77,12 @@ namespace Home.Sandbox
 
         public void OnCollisionEnter(Collision other)
         {
-            onGround = other.gameObject.name.Equals("Ground");
+            onGround = other.gameObject.CompareTag("Ground");
         }
 
         public void OnCollisionExit(Collision other)
         {
-            onGround = !other.gameObject.name.Equals("Ground");
+            onGround = !other.gameObject.CompareTag("Ground");
         }
     }
 
