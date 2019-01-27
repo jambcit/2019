@@ -1,4 +1,5 @@
-﻿using Home.UI;
+﻿using Home.Sandbox;
+using Home.UI;
 using UnityEngine;
 
 namespace Home.Core
@@ -19,7 +20,17 @@ namespace Home.Core
         public static void UpdateGameMode(GameMode gameMode)
         {
             GameMode = gameMode;
-            GameModePopup.Display(GameMode);
+            SandboxObjectInteraction[] interactionObjects = Object.FindObjectsOfType<SandboxObjectInteraction>();
+            bool isSandbox = GameMode == GameMode.Sandbox;
+            foreach (SandboxObjectInteraction interactionObject in interactionObjects)
+            {
+                interactionObject.gameObject.SetActive(isSandbox);
+            }
+
+            if (!isSandbox)
+            {
+                GameModePopup?.Display(GameMode);
+            }
         }
     }
 }
