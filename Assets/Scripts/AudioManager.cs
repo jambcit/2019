@@ -5,6 +5,7 @@ namespace Home.Core
 {
     public class AudioManager : MonoBehaviour
     {
+        public string audioName;
         public Sound[] sounds;
 
         public static AudioManager instance;
@@ -30,6 +31,14 @@ namespace Home.Core
 
                 s.source.loop = s.loop;
             }
+        }
+
+        public void Update()
+        {
+            //Used for testing audio
+            if (Input.GetKeyDown(KeyCode.P))
+                FindObjectOfType<AudioManager>().Play(audioName);
+
         }
 
         public void Play(string name)

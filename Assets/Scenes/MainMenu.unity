@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -758,6 +758,123 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389206608}
   m_CullTransparentMesh: 0
+--- !u!1 &393955543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 393955544}
+  - component: {fileID: 393955545}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &393955544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393955543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &393955545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393955543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a64a5cb1828e2d4690a5a47c59a60fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioName: PunchLand
+  sounds:
+  - name: DartFire
+    clip: {fileID: 8300000, guid: c70c102650fff7e4a8f1ca505c0934af, type: 3}
+    volume: 0.446
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: DartLand
+    clip: {fileID: 8300000, guid: 243fd2655e9452f4e91dd3f3c4027022, type: 3}
+    volume: 0.5
+    pitch: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: DroneHover
+    clip: {fileID: 8300000, guid: fedc2c28991dea64d8f1a10552f560a6, type: 3}
+    volume: 0.44
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: GameLoose
+    clip: {fileID: 8300000, guid: fe73f207e4ce9d4429e06e1298e6806b, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GameWin
+    clip: {fileID: 8300000, guid: 3c8096d7832a0134987f36d58303ffb3, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerCrouchWalk
+    clip: {fileID: 8300000, guid: ead0ae77a277adb4481b9df6cd8a6060, type: 3}
+    volume: 0.26
+    pitch: 1.23
+    loop: 1
+    source: {fileID: 0}
+  - name: PlayerJumpBegin
+    clip: {fileID: 8300000, guid: 5094f13d1c3bd074aa0d8cd053aa1786, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerJumpLand
+    clip: {fileID: 8300000, guid: eec471bc39dff1946bbf0904be3ebee5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerRun
+    clip: {fileID: 8300000, guid: dd23fe0bdc64ef141a888b6fd899dca0, type: 3}
+    volume: 0.5
+    pitch: 1.5
+    loop: 1
+    source: {fileID: 0}
+  - name: PlayerWalk
+    clip: {fileID: 8300000, guid: ec2f4855600fa944e9060e45718c6929, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PunchLand
+    clip: {fileID: 8300000, guid: 5f387bffbc35e96448545012d99b3ccc, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PunchMiddle
+    clip: {fileID: 8300000, guid: 12e626ae7daedf446aa19720cc40395b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &433624959
 GameObject:
   m_ObjectHideFlags: 0
