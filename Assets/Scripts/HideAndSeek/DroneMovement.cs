@@ -95,7 +95,7 @@ namespace Home.HNS
                 Vector3 right = transform.right;
                 right.y = 0;
                 //moves drone relative to drone's rotation
-                rb.AddForce((right * movement.x + transform.up * movement.y + forward * movement.z).normalized, ForceMode.Impulse);
+                rb.AddForce((right * movement.x + transform.up * movement.y + forward * movement.z).normalized / 10 * movementSpeed, ForceMode.Impulse);
                 //transform.position += right * movement.x + transform.up * movement.y + forward * movement.z;
 
             }

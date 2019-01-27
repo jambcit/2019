@@ -34,6 +34,10 @@ public class DroneRole : MonoBehaviour
             //photonView.RPC("Tag", RpcTarget.All, other.name);
         }
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+    }
 
     void Tag(string name)
     {

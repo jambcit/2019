@@ -11,6 +11,7 @@ namespace Home.HNS
         public Text time;
 
         public bool isBGMOn;
+        public string bgmName;
 
         public float hideAndSeekTimeLimit = 10f;
         public float hideAndSeekTimer;
@@ -39,7 +40,7 @@ namespace Home.HNS
             }
             else
             {
-                FindObjectOfType<AudioManager>().Stop("Test");
+                BGMOff();
                 isBGMPlaying = false;
             }
         }
@@ -48,7 +49,15 @@ namespace Home.HNS
         {
             if (!isBGMPlaying)
             {
-                FindObjectOfType<AudioManager>().Play("Test");
+                FindObjectOfType<AudioManager>().Play(bgmName);
+            }
+        }
+
+        private void BGMOff()
+        {
+            if (!isBGMPlaying)
+            {
+                FindObjectOfType<AudioManager>().Play(bgmName);
             }
         }
 
