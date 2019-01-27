@@ -10,6 +10,7 @@ namespace Home.Core
         public static PlayerController LocalPlayer { get; set; }
         public static GameMode GameMode { get; set; } = GameMode.Sandbox;
         public static GameModePopup GameModePopup { get; set; }
+        public static HUD Hud { get; set; }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
