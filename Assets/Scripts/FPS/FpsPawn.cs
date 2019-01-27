@@ -27,14 +27,13 @@ namespace Home.Fps
             UpdateActions += moveComponent.Update;
             FixedUpdateActions += moveComponent.FixedUpdate;
 
-            dartPool = new DartPool(dartPrefab, dartCount);
-            dartPool.Start();
+            InitializeRemote();
 
             FpsGunComponent gunComponent = new FpsGunComponent(myPlayerController, this, dartPool, dartSpawn);
             UpdateActions += gunComponent.Update;
         }
 
-        public void InitializeRemote()
+        public override void InitializeRemote()
         {
             dartPool = new DartPool(dartPrefab, dartCount);
             dartPool.Start();
