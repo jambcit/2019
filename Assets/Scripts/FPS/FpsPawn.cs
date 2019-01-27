@@ -14,7 +14,7 @@ namespace Home.Fps
         [SerializeField] private float moveSpeed = 6;
         [SerializeField] private float rotationSpeed = 1;
 
-        private DartPool dartPool;
+        [SerializeField] private DartPool dartPool;
 
         public override void Initialize()
         {
@@ -32,6 +32,12 @@ namespace Home.Fps
 
             FpsGunComponent gunComponent = new FpsGunComponent(myPlayerController, this, dartPool, dartSpawn);
             UpdateActions += gunComponent.Update;
+        }
+
+        public void InitializeRemote()
+        {
+            dartPool = new DartPool(dartPrefab, dartCount);
+            dartPool.Start();
         }
 
         [PunRPC]

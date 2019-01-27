@@ -72,9 +72,9 @@
         {
             if (scene.buildIndex == 1)
             {
-                Pawn pawn = PhotonNetwork.Instantiate("FpsPawn", new Vector3(0, 10, 0), Quaternion.identity).GetComponent<Pawn>();
+                GameObject pawn = PhotonNetwork.Instantiate("FpsPawn", new Vector3(0, 10, 0), Quaternion.identity);
                 PlayerController pc = PhotonNetwork.Instantiate("Player", new Vector3(0, 10, 0), Quaternion.identity).GetComponent<PlayerController>();
-                pc.AttachPawn(pawn);
+                pc.AttachPawn(pawn.GetComponent<Pawn>());
             }
         }
 
