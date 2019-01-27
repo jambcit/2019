@@ -21,7 +21,6 @@ namespace Home.Sandbox
 
         public float curGuage = 0.000f;
 
-        public static string CHAR_OBJ_NAME = "SandboxCharacter";
         public static float INC_GUAGE = 0.0001f;
         public static float MAX_GUAGE = 0.005f;
 
@@ -29,7 +28,7 @@ namespace Home.Sandbox
 
         [SerializeField]
         GameMode gameMode;
-
+        
         private void Start()
         {
             isInteractable = true;
@@ -75,7 +74,7 @@ namespace Home.Sandbox
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.name == CHAR_OBJ_NAME && isInteractable)
+            if (other.gameObject.CompareTag("Player") && isInteractable)
             {
                 MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
                 myMeshRenderer.material.color = Color.red;
@@ -88,7 +87,7 @@ namespace Home.Sandbox
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.name == CHAR_OBJ_NAME && isInteractable)
+            if (other.gameObject.CompareTag("Player") && isInteractable)
             {
                 MeshRenderer myMeshRenderer = GetComponent<MeshRenderer>();
                 myMeshRenderer.material.color = Color.white;
