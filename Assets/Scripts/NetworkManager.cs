@@ -26,6 +26,7 @@
         public void OnConnectedToMaster()
         {
             PhotonNetwork.JoinLobby();
+            PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable() { { "score", 0 } });
         }
             
         public void OnJoinedRoom()

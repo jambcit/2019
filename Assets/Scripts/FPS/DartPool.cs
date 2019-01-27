@@ -27,7 +27,7 @@ namespace Home.Fps
             }
         }
 
-        public void ShootNextDart(Vector3 position, Quaternion rotation)
+        public void ShootNextDart(int viewId, Vector3 position, Quaternion rotation)
         {
             GameObject dart = dartPool[dartIndex];
             dartIndex++;
@@ -36,7 +36,7 @@ namespace Home.Fps
             dart.transform.position = position;
             dart.transform.rotation = rotation;
             Dart d = dart.GetComponent<Dart>();
-            d.Shoot();
+            d.Shoot(viewId);
         }
     }
 }

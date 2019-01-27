@@ -46,12 +46,15 @@ namespace Home.Fps
             isStuck = true;
             if (!isDead)
             {
-                if (other.GetComponent<Shrapnel>() != null)
+                if (other.GetComponent<FpsPawn>() != null)
                 {
                     numHits++;
                     if (PhotonNetwork.GetPhotonView(sourceViewId).IsMine)
                     {
-                        //GameManager.LocalPlayer
+                        int currScore = (int)PhotonNetwork.LocalPlayer.CustomProperties["score"];
+                        PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable { { "score", currScore += 10 } });
+                        isDead = true;
+                        Debug.Log(currScore);
                     }
                 }
             }

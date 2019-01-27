@@ -28,7 +28,7 @@ namespace Home.Fps
                 }
                 else
                 {
-                    dartPool.ShootNextDart(dartSpawn.position, dartSpawn.rotation);
+                    dartPool.ShootNextDart(fpsPawn.photonView.ViewID, dartSpawn.position, dartSpawn.rotation);
                 }
             }
         }
