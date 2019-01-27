@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1763703620}
   - component: {fileID: 1763703622}
   - component: {fileID: 1763703621}
-  - component: {fileID: 5156099192716826203}
+  - component: {fileID: 2270629428594174435}
   m_Layer: 0
   m_Name: cabinetA
   m_TagString: Untagged
@@ -109,7 +109,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5156099192716826203
+--- !u!65 &2270629428594174435
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,5 +120,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 41.826004, y: 132.40703, z: 106.292076}
-  m_Center: {x: 0.0000076293945, y: 66.203514, z: -0.0000038146973}
+  m_Size: {x: 1.25478, y: 3.9722106, z: 3.1887622}
+  m_Center: {x: 0.00000023841858, y: 1.9861053, z: -0.00000011920929}
