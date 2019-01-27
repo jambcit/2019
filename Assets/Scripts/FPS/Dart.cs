@@ -27,7 +27,6 @@ namespace Home.Fps
 
         void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Collider");
             isStuck = true;
         }
     }

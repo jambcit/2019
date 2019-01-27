@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Home.Fps
 {
+    [System.Serializable]
     public class DartPool
     {
         private GameObject dartPrefab;

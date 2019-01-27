@@ -5,6 +5,7 @@
     using Photon.Pun;
     using Photon.Realtime;
     using System.Collections.Generic;
+    using UnityEngine.SceneManagement;
 
     public class NetworkManager : IConnectionCallbacks, IMatchmakingCallbacks, ILobbyCallbacks
     {
@@ -18,6 +19,7 @@
         {
             PhotonNetwork.AddCallbackTarget(this);
             PhotonNetwork.ConnectUsingSettings();
+            SceneManager.sceneLoaded += OnSceneLoad;
         }
 
         public void OnConnectedToMaster()
@@ -29,7 +31,8 @@
         {
             PhotonNetwork.LoadLevel(1);
             // Instatiate all pawns whe joining (drone, nerf gun, kid)
-            PhotonNetwork.Instantiate("Cube", Vector3.zero, Quaternion.identity);
+            
+            
         }
 
         public void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -62,6 +65,16 @@
                     // Add new room info to cache
                     cachedRoomList.Add(info.Name, info);
                 }
+            }
+        }
+
+        private void OnSceneLoad(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.buildIndex == 1)
+            {
+                GameObject pawn = PhotonNetwork.Instantiate("FpsPawn", new Vector3(0, 10, 0), Quaternion.identity);
+                PlayerController pc = PhotonNetwork.Instantiate("Player", new Vector3(0, 10, 0), Quaternion.identity).GetComponent<PlayerController>();
+                pc.AttachPawn(pawn.GetComponent<Pawn>());
             }
         }
 
