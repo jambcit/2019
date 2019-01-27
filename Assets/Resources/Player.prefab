@@ -737,6 +737,7 @@ GameObject:
   - component: {fileID: 3803473318378592700}
   - component: {fileID: 7012621995105778466}
   - component: {fileID: 2050085862729272495}
+  - component: {fileID: 9038073430840968305}
   - component: {fileID: 2636100691113510274}
   m_Layer: 0
   m_Name: SandboxPawn
@@ -942,6 +943,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  _animator: {fileID: 0}
+--- !u!114 &9038073430840968305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139264192307303959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291399a29b3d32a4992f3998f0a2c09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+=======
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters:
@@ -971,6 +987,7 @@ MonoBehaviour:
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1
+>>>>>>> 079bddb1ec8c7e79d2c5a45992568c5182aee4ce
 --- !u!1 &6759579061967027527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,8 +1607,14 @@ GameObject:
   - component: {fileID: 8841887011506413731}
   - component: {fileID: 8841887011506413730}
   - component: {fileID: 3561220205299962912}
+<<<<<<< HEAD
+  - component: {fileID: 7335909584277280921}
+  - component: {fileID: 5425757529317497735}
+  - component: {fileID: 5093985892034147180}
+=======
   - component: {fileID: 4287549018621146599}
   - component: {fileID: 5396397859327031091}
+>>>>>>> 079bddb1ec8c7e79d2c5a45992568c5182aee4ce
   m_Layer: 0
   m_Name: FpsPawn
   m_TagString: Untagged
@@ -1748,6 +1771,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  m_Animator: {fileID: 3561220205299962912}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
+--- !u!114 &5093985892034147180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841887011506414323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291399a29b3d32a4992f3998f0a2c09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8841887011506414324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8841887011506414349}
+  m_Layer: 0
+  m_Name: DartSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8841887011506414349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841887011506414324}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8841887011506414348}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters:
@@ -1774,6 +1849,7 @@ MonoBehaviour:
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1
+>>>>>>> 079bddb1ec8c7e79d2c5a45992568c5182aee4ce
 --- !u!1 &8841887011506414345
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Home.Core;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace Home.Sandbox
         float moveSpeed;            // Player's speed when walking.
         float rotationSpeed;
         float jumpHeight;         // How high Player jumps
-        
+
         Vector3 moveDirection;
         public Vector3 lookAtValue;
 
@@ -18,10 +19,10 @@ namespace Home.Sandbox
         public float horizontal;
         public float vertical;
         public Vector3 inputDir;
-        
+
         private Camera myCam;
         private Transform myTransform;
-        
+
         public bool onGround;
 
         //start position, not implemented yet
@@ -39,7 +40,7 @@ namespace Home.Sandbox
             this.jumpHeight = jumpHeight;
             this.rb = rb;
         }
-        
+
         public void Update()
         {
             horizontal = Input.GetAxis("Horizontal");
@@ -54,7 +55,7 @@ namespace Home.Sandbox
                 Jump();
             }
         }
-        
+
         void Move()
         {
             Vector3 forward = new Vector3(myTransform.position.x - myCam.transform.position.x, 0, myTransform.position.z - myCam.transform.position.z).normalized;
@@ -78,6 +79,7 @@ namespace Home.Sandbox
         public void OnCollisionEnter(Collision other)
         {
             onGround = other.gameObject.CompareTag("Ground");
+            AudioManager.instance.Play("PlayerJumpLand");
         }
 
         public void OnCollisionExit(Collision other)
