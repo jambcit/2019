@@ -5,13 +5,8 @@ namespace Home.Sandbox
 {
     public class SandboxPawn : Pawn
     {
-        SandboxCharacterInteraction mySandboxCharacterInteraction;
-
         public SandboxCharacterInteraction MySandboxCharacterInteraction {
-            get {
-                return mySandboxCharacterInteraction;
-            }
-            
+            get; private set;
         }
 
         SandboxCharacterMovement mySandboxCharacterMovement;
@@ -19,14 +14,14 @@ namespace Home.Sandbox
         public override void Initialize()
         {
             mySandboxCharacterMovement = new SandboxCharacterMovement(transform, Camera.main, new Vector3(0,0,0), this.GetComponent<Rigidbody>());
-            mySandboxCharacterInteraction = new SandboxCharacterInteraction();
+            MySandboxCharacterInteraction = new SandboxCharacterInteraction();
 
             SandboxCharacterCamera mySandBoxCamera = new SandboxCharacterCamera(Camera.main, transform, 10);
             
             UpdateActions += mySandboxCharacterMovement.Update;
             FixedUpdateActions += mySandboxCharacterMovement.FixedUpdate;
 
-            UpdateActions += mySandboxCharacterInteraction.Update;
+            UpdateActions += MySandboxCharacterInteraction.Update;
 
             UpdateActions += mySandBoxCamera.Update;
             LateUpdateActions += mySandBoxCamera.LateUpdate;
@@ -35,5 +30,9 @@ namespace Home.Sandbox
             OnCollisionExitActions += mySandboxCharacterMovement.OnCollisionExit;
         }
 
+        public override void InitializeRemote()
+        {
+            // Nothing shared required
+        }
     }
 }

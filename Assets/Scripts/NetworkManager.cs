@@ -6,8 +6,9 @@
     using Photon.Realtime;
     using System.Collections.Generic;
     using UnityEngine.SceneManagement;
+    using ExitGames.Client.Photon;
 
-    public class NetworkManager : IConnectionCallbacks, IMatchmakingCallbacks, ILobbyCallbacks
+    public class NetworkManager : IConnectionCallbacks, IMatchmakingCallbacks, ILobbyCallbacks, IInRoomCallbacks
     {
         public static Action RoomListUpdated;
 
@@ -30,15 +31,20 @@
         public void OnJoinedRoom()
         {
             PhotonNetwork.LoadLevel(1);
-            // Instatiate all pawns whe joining (drone, nerf gun, kid)
-
-
         }
 
         public void OnRoomListUpdate(List<RoomInfo> roomList)
         {
             UpdateCachedRoomList(roomList);
             RoomListUpdated?.Invoke();
+        }
+
+        public void OnRoomPropertiesUpdate(Hashtable propertiesThatChanged)
+        {
+            if (propertiesThatChanged.ContainsKey("gm"))
+            {
+                GameManager.UpdateGameMode((GameMode)propertiesThatChanged["gm"]);
+            }
         }
 
         private void UpdateCachedRoomList(List<RoomInfo> roomList)
@@ -72,11 +78,9 @@
         {
             if (scene.buildIndex == 1)
             {
-                //GameObject pawn = PhotonNetwork.Instantiate("FpsPawn", new Vector3(0, 10, 0), Quaternion.identity);
-                GameObject pawn = PhotonNetwork.Instantiate("SandboxPawn", new Vector3(0, 10, 0), Quaternion.identity);
-
-                PlayerController pc = PhotonNetwork.Instantiate("Player", new Vector3(0, 10, 0), Quaternion.identity).GetComponent<PlayerController>();
-                pc.AttachPawn(pawn.GetComponent<Pawn>());
+                GameObject player = PhotonNetwork.Instantiate("Player", new Vector3(0, 10, 0), Quaternion.identity);
+                PlayerController pc = player.GetComponent<PlayerController>();
+                GameManager.LocalPlayer = pc;
             }
         }
 
@@ -94,5 +98,9 @@
         public void OnJoinedLobby() {}
         public void OnLeftLobby() {}
         public void OnLobbyStatisticsUpdate(List<TypedLobbyInfo> lobbyStatistics) {}
+        public void OnPlayerEnteredRoom(Player newPlayer) {}
+        public void OnPlayerLeftRoom(Player otherPlayer) {}
+        public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps) {}
+        public void OnMasterClientSwitched(Player newMasterClient) {}
     }
 }

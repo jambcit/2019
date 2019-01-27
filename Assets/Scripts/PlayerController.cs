@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 namespace Home.Core
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviourPun, IPunInstantiateMagicCallback
     {
-        [SerializeField] private Pawn controlledPawn;
+        [SerializeField] private List<Pawn> myPawns;
         [SerializeField] private List<string> registeredAxes;
+        public Pawn ControlledPawn { get; private set; }
         private Dictionary<string, bool> lastFrame = new Dictionary<string, bool>();
         private Dictionary<string, bool> currentFrame = new Dictionary<string, bool>();
 
@@ -19,22 +21,13 @@ namespace Home.Core
             }
         }
 
-        private void Start()
-        {
-            if (controlledPawn != null)
-            {
-                controlledPawn.Attach(this);
-                controlledPawn.Initialize();
-            }
-        }
-
         public void AttachPawn(Pawn pawn)
         {
-            if (controlledPawn != null)
+            if (ControlledPawn != null)
             {
-                controlledPawn.Detach();
+                ControlledPawn.Detach();
             }
-            controlledPawn = pawn;
+            ControlledPawn = pawn;
             pawn.Attach(this);
         }
 
@@ -63,6 +56,30 @@ namespace Home.Core
         public bool GetAxisReleased(string axisName)
         {
             return lastFrame[axisName] && !currentFrame[axisName];
+        }
+
+        public void SetGameModePawn(GameMode gameMode)
+        {
+            AttachPawn(myPawns[(int)gameMode]);
+        }
+
+        public void OnPhotonInstantiate(PhotonMessageInfo info)
+        {
+            if (info.photonView.IsMine)
+            {
+                foreach (Pawn pawn in myPawns)
+                {
+                    pawn.Initialize();
+                }
+                SetGameModePawn(GameManager.GameMode);
+            }
+            else
+            {
+                foreach (Pawn pawn in myPawns)
+                {
+                    pawn.InitializeRemote();
+                }
+            }
         }
     }
 }

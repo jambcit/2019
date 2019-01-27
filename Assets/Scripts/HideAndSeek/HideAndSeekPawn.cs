@@ -9,16 +9,17 @@ namespace Home.HideAndSeek
 
         public override void Initialize()
         {
-            myHideAndSeekCharacterMovement
-                = new HideAndSeekCharacterMovement(
-                        this.GetComponent<Rigidbody>()
-                        , transform
-                    );
+            myHideAndSeekCharacterMovement = new HideAndSeekCharacterMovement(this.GetComponent<Rigidbody>(), transform);
 
             UpdateActions += myHideAndSeekCharacterMovement.Update;
 
             OnTriggerEnterActions += myHideAndSeekCharacterMovement.OnTriggerEnter;
             OnCollisionExitActions += myHideAndSeekCharacterMovement.OnCollisionExit;
+        }
+
+        public override void InitializeRemote()
+        {
+            // Nothing shared required
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Home.Core
     public delegate void OnCollisionEnterActionDelegate(Collision other);
     public delegate void OnCollisionExitActionDelegate(Collision other);
 
-    public abstract class Pawn : MonoBehaviourPun, IPunInstantiateMagicCallback
+    public abstract class Pawn : MonoBehaviourPun
     {
         protected UpdateActionDelegate UpdateActions;
         protected LateUpdateActionDelegate LateUpdateActions;
@@ -24,7 +24,7 @@ namespace Home.Core
         private bool inputEnabled = false;
 
         public abstract void Initialize();
-        // public abstract void InitializeRemote();
+        public abstract void InitializeRemote();
 
         private void Update()
         {
@@ -93,12 +93,13 @@ namespace Home.Core
                 OnTriggerExitActions.Invoke(other);
             }
         }
-
-        public void OnPhotonInstantiate(PhotonMessageInfo info)
+        
+        public void SetName(string Name)
         {
-            if (!info.photonView.IsMine)
+            Transform nameObject = transform.GetChild(0);
+            if (nameObject != null)
             {
-                ((Fps.FpsPawn)this).InitializeRemote();
+                nameObject.GetComponent<TextMesh>().text = Name;
             }
         }
     }
