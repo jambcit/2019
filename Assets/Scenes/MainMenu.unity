@@ -808,21 +808,21 @@ MonoBehaviour:
     volume: 0.446
     pitch: 2
     loop: 0
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: DartLand
     clip: {fileID: 8300000, guid: 243fd2655e9452f4e91dd3f3c4027022, type: 3}
     volume: 0.5
     pitch: 0.75
     loop: 0
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: DroneHover
     clip: {fileID: 8300000, guid: fedc2c28991dea64d8f1a10552f560a6, type: 3}
     volume: 0.44
     pitch: 1
     loop: 1
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: GameLoose
     clip: {fileID: 8300000, guid: fe73f207e4ce9d4429e06e1298e6806b, type: 3}
@@ -843,7 +843,7 @@ MonoBehaviour:
     volume: 0.26
     pitch: 1.23
     loop: 0
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: PlayerJumpGrunt
     clip: {fileID: 8300000, guid: 12e626ae7daedf446aa19720cc40395b, type: 3}
@@ -857,7 +857,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 0
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: PlayerRun
     clip: {fileID: 8300000, guid: dd23fe0bdc64ef141a888b6fd899dca0, type: 3}
@@ -871,56 +871,56 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 0
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: PunchLand
     clip: {fileID: 8300000, guid: 5f387bffbc35e96448545012d99b3ccc, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: PunchMiddle
     clip: {fileID: 8300000, guid: 12e626ae7daedf446aa19720cc40395b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: PlayerInteract
     clip: {fileID: 8300000, guid: 7d3694598f3780041a772ea00d8683ef, type: 3}
     volume: 1
     pitch: 1.5
     loop: 0
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: BGMMainMenu
     clip: {fileID: 8300000, guid: f1b2d22461acf72458ad75c98fb271cc, type: 3}
     volume: 1
     pitch: 1
     loop: 1
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: BGMSandbox
     clip: {fileID: 8300000, guid: 1e133114d551f5243a2273f0503d454c, type: 3}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 1
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: BGMFps
     clip: {fileID: 8300000, guid: 36ec64449050e1f46b39a2aebc70c16e, type: 3}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 1
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: BGMHns
     clip: {fileID: 8300000, guid: e7c4f2f2ca5688441af8b30c8b844a70, type: 3}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 1
-    spatialBlend: 1
+    spatialBlend: 0
     source: {fileID: 0}
 --- !u!1 &433624959
 GameObject:

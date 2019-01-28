@@ -52,5 +52,6 @@ public class KidLocomotion : MonoBehaviour {
     {
         _animator.SetFloat("VelX", x);
         _animator.SetFloat("VelY", y);
+
     }
 }
