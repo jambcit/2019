@@ -74,6 +74,7 @@ namespace Home.Core
             GameManager.Hud.AddPlayer(info.Sender.UserId, info.Sender.NickName, score);
             if (info.photonView.IsMine)
             {
+
                 TimerCanvas = Resources.FindObjectsOfTypeAll<GameTimer>()[0];
                 foreach (Pawn pawn in myPawns)
                 {
