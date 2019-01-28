@@ -903,21 +903,21 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BGMSandbox
     clip: {fileID: 8300000, guid: 1e133114d551f5243a2273f0503d454c, type: 3}
-    volume: 0.75
+    volume: 0.5
     pitch: 1
     loop: 1
     spatialBlend: 0
     source: {fileID: 0}
   - name: BGMFps
     clip: {fileID: 8300000, guid: 36ec64449050e1f46b39a2aebc70c16e, type: 3}
-    volume: 0.75
+    volume: 0.5
     pitch: 1
     loop: 1
     spatialBlend: 0
     source: {fileID: 0}
   - name: BGMHns
     clip: {fileID: 8300000, guid: e7c4f2f2ca5688441af8b30c8b844a70, type: 3}
-    volume: 0.75
+    volume: 0.5
     pitch: 1
     loop: 1
     spatialBlend: 0

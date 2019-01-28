@@ -8,12 +8,20 @@ namespace Home.Core
     public class BGMGame : MonoBehaviour
     {
 
-        private string currentBGM;
+
+        public string currentBGM;
         // Start is called before the first frame update
         void Start()
         {
-            AudioManager.instance.Play("BGMSandbox");
-            currentBGM = "BGMSandbox";
+            if (currentBGM == null)
+            {
+                AudioManager.instance.Play("BGMSandbox");
+                currentBGM = "BGMSandbox";
+            }
+            else
+            {
+                AudioManager.instance.Play(currentBGM);
+            }
         }
 
 
