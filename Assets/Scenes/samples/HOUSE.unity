@@ -5179,8 +5179,60 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 173951845433394628, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574335787727277117, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 966581254}
+    - target: {fileID: 7574335787727277117, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 966581253}
+    - target: {fileID: 5494479115002937525, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494479115002937525, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -32.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439078335625614623, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439078335625614623, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439078335625614623, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8d84d43bf48f134c9ba9569c9e0ad87, type: 3}
+--- !u!1 &966581253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2044498625476252363, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+    type: 3}
+  m_PrefabInstance: {fileID: 966581252}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &966581254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7657744491126557563, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+    type: 3}
+  m_PrefabInstance: {fileID: 966581252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &968211395
 GameObject:
   m_ObjectHideFlags: 0

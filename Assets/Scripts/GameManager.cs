@@ -67,6 +67,17 @@ namespace Home.Core
                     LocalPlayer.TimerCanvas.Initialize(300);
                 }
             }
+            else if (GameMode == GameMode.Fps)
+            {
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    LocalPlayer.TimerCanvas.Initialize(300, SetToSandbox);
+                }
+                else
+                {
+                    LocalPlayer.TimerCanvas.Initialize(300);
+                }
+            }
         }
 
         private static void SetToSandbox()
