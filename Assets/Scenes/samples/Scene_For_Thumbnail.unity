@@ -1692,7 +1692,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\rBill Oh\r, Ching Choi, Geoff McLennan\r ,Joshua Takeshi Abe\r, Morris
-    Arroyo\r, Shawn Kim\r, Tyler Da Costa\r\nSpecial Thanks to \rDAN MURRAY for BGM"
+    Arroyo\r, Shawn Kim\r, Tyler Da Costa\r\nSpecial Thanks to \rDAN MURRAY, Tree
+    Of Audio"
 --- !u!222 &287710702
 CanvasRenderer:
   m_ObjectHideFlags: 0
