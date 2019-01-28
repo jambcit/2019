@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,6 @@ namespace Home.HideAndSeek
 {
     public class HideAndSeekCharacterMovement
     {
-
         private Rigidbody rb;
         private Transform transform;
 
@@ -47,10 +47,10 @@ namespace Home.HideAndSeek
         private bool isOverheating = false;
 
         //It
-        //private bool isIt;
+        private HideAndSeekPawn myPawn;
         public HideAndSeekCharacterMovement(
             Rigidbody rb
-            , Transform transform)
+            , Transform transform, HideAndSeekPawn pawn)
         {
             //Components
             this.rb = rb;
@@ -68,6 +68,8 @@ namespace Home.HideAndSeek
             overheatTimer = OVERHEAT_TIME_LENGTH;
             // True if isOverheating because of over use of Boost
             isOverheating = false;
+
+            myPawn = pawn;
         }
 
         public void Update()
@@ -87,11 +89,11 @@ namespace Home.HideAndSeek
             Move(movement);
 
             // Rotation
-            float mouseX2 = Input.mousePosition.x - (Screen.width / 2.0f);
-            Vector3 direction = Vector3.zero;
-            if (MOUSE_DEAD_ZONE < Mathf.Abs(mouseX2))
-                direction = new Vector3(0f, mouseX2 * MOUSE_SENSITIVITY, 0f);
-            Rotate(direction);
+            float mouseX2 = Input.GetAxis("Mouse X");//Input.mousePosition.x - (Screen.width / 2.0f);
+            //Vector3 direction = Vector3.zero;
+            //if (MOUSE_DEAD_ZONE < Mathf.Abs(mouseX2))
+            //    direction = new Vector3(0f, mouseX2 * MOUSE_SENSITIVITY, 0f);
+            RotateY(mouseX2);
 
             // Boost
             if (Input.GetKey(KeyCode.LeftShift))
@@ -234,11 +236,11 @@ namespace Home.HideAndSeek
             }
         }
 
-        public void Rotate(Vector3 rotation)
+        public void RotateY(float eulerAngle)
         {
 
             //transform.rotation = transform.rotation * Quaternion.Euler(rotation * rotationSpeed);
-            transform.RotateAround(transform.position, Vector3.up, rotation.y);
+            transform.RotateAround(transform.position, Vector3.up, eulerAngle);
 
             //transform.RotateAround(transform.position, Vector3.up, rotation.y);
         }
@@ -292,17 +294,11 @@ namespace Home.HideAndSeek
 
         public void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag(player_tag)
-                // && isIt
-                )
+            HideAndSeekPawn otherPawn = other.gameObject.GetComponent<HideAndSeekPawn>();
+            if (other.gameObject.CompareTag(player_tag) && myPawn.IsSeeker)
             {
-                Debug.Log("Found " + other.gameObject.name);
-                //other.gameObject.GetComponent<DroneRole>().isIt = true;
-                //++tagCount;
-                //Destroy(other.gameObject);
-                //collision.gameObject.GetComponent<PhotonView>().RPC("Tag", RpcTarget.All, collision.gameObject.name);
-                //PhotonView photonView = PhotonView.Get(this);
-                //photonView.RPC("Tag", RpcTarget.All, other.name);
+                PhotonView otherPhotonView = other.transform.parent.gameObject.GetComponent<PhotonView>();
+                myPawn.photonView.RPC("SetSeeker", RpcTarget.All, otherPhotonView.ViewID);
             }
         }
 
@@ -310,21 +306,5 @@ namespace Home.HideAndSeek
         {
             rb.angularVelocity = Vector3.zero;
         }
-
-        //void Tag(string name)
-        //{
-        //    Debug.Log("Found " + name);
-        //}
-
-
-        //// Called by the HideAndSeekGameModeManager GameOver()
-        //void PostScore()
-        //{
-        //    if (isClient)
-        //    {
-
-        //    }
-        //}
-
     }
 }

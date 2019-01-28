@@ -18,8 +18,6 @@ namespace Home.Sandbox
             if (interactableTarget != null
                 && Input.GetKey(KeyCode.E))
             {
-                Debug.Log("Try " + interactableTarget.gameObject.name);
-
                 interactableTarget.StartInteraction();
             }
 

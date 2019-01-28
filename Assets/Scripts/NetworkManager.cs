@@ -31,6 +31,8 @@
             
         public void OnJoinedRoom()
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             PhotonNetwork.LoadLevel(1);
         }
 
@@ -90,11 +92,6 @@
             
         }
 
-        public void OnPlayerLeftRoom(Player otherPlayer)
-        {
-            GameManager.Hud.RemovePlayer(otherPlayer.UserId);
-        }
-
         public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
         {
             if (changedProps.ContainsKey("score"))
@@ -103,12 +100,27 @@
             }
         }
 
+        public void OnPlayerLeftRoom(Player otherPlayer)
+        {
+            GameManager.Hud.RemovePlayer(otherPlayer.UserId);
+            for (int view = 0; view < GameManager.PlayerControllerViewIds.Count; view++)
+            {
+                if (GameManager.PlayerControllerViewIds[view] == (int)otherPlayer.CustomProperties["id"])
+                {
+                    GameManager.PlayerControllerViewIds.RemoveAt(view);
+                }
+            }
+        }
+        public void OnLeftRoom() {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         public void OnCreatedRoom() {}
         public void OnCreateRoomFailed(short returnCode, string message) {}
         public void OnFriendListUpdate(List<FriendInfo> friendList) {}
         public void OnJoinRandomFailed(short returnCode, string message) {}
         public void OnJoinRoomFailed(short returnCode, string message) {}
-        public void OnLeftRoom() {}
         public void OnConnected() {}
         public void OnDisconnected(DisconnectCause cause) {}
         public void OnRegionListReceived(RegionHandler regionHandler) {}

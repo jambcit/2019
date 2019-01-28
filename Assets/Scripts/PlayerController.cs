@@ -26,6 +26,8 @@ namespace Home.Core
             if (ControlledPawn != null)
             {
                 ControlledPawn.Detach();
+                pawn.transform.position = ControlledPawn.transform.position;
+                pawn.transform.rotation = ControlledPawn.transform.rotation;
             }
             ControlledPawn = pawn;
             pawn.Attach(this);
@@ -69,11 +71,14 @@ namespace Home.Core
             GameManager.Hud.AddPlayer(info.Sender.UserId, info.Sender.NickName, score);
             if (info.photonView.IsMine)
             {
-                SetGameModePawn(GameManager.GameMode);
                 foreach (Pawn pawn in myPawns)
                 {
-                    pawn.Initialize();
+                    pawn.Initialize(this);
                 }
+                
+                info.Sender.SetCustomProperties(new ExitGames.Client.Photon.Hashtable {
+                    { "id", info.photonView.ViewID }
+                });
             }
             else
             {
@@ -82,6 +87,8 @@ namespace Home.Core
                     pawn.InitializeRemote();
                 }
             }
+            SetGameModePawn(GameManager.GameMode);
+            GameManager.PlayerControllerViewIds.Add(info.photonView.ViewID);
         }
     }
 }

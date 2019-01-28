@@ -23,7 +23,7 @@ namespace Home.Core
         protected PlayerController myPlayerController;
         private bool inputEnabled = false;
 
-        public abstract void Initialize();
+        public abstract void Initialize(PlayerController myPlayerController);
         public abstract void InitializeRemote();
 
         private void Update()
@@ -52,14 +52,14 @@ namespace Home.Core
 
         public void Attach(PlayerController myPlayerController)
         {
-            this.myPlayerController = myPlayerController;
             this.inputEnabled = true;
+            this.gameObject.SetActive(true);
         }
 
         public void Detach()
         {
-            this.myPlayerController = null;
             this.inputEnabled = false;
+            this.gameObject.SetActive(false);
         }
 
         private void OnCollisionEnter(Collision other)

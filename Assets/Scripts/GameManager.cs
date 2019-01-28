@@ -1,5 +1,8 @@
-﻿using Home.Sandbox;
+using Home.Sandbox;
 using Home.UI;
+using Home.HideAndSeek;
+using Photon.Pun;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Home.Core
@@ -11,6 +14,7 @@ namespace Home.Core
         public static GameMode GameMode { get; set; } = GameMode.Sandbox;
         public static GameModePopup GameModePopup { get; set; }
         public static HUD Hud { get; set; }
+        public static List<int> PlayerControllerViewIds { get; } = new List<int>();
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
@@ -21,7 +25,7 @@ namespace Home.Core
         public static void UpdateGameMode(GameMode gameMode)
         {
             GameMode = gameMode;
-            SandboxObjectInteraction[] interactionObjects = Object.FindObjectsOfType<SandboxObjectInteraction>();
+            SandboxObjectInteraction[] interactionObjects = (SandboxObjectInteraction[])Resources.FindObjectsOfTypeAll(typeof(SandboxObjectInteraction));
             bool isSandbox = GameMode == GameMode.Sandbox;
             foreach (SandboxObjectInteraction interactionObject in interactionObjects)
             {
@@ -31,6 +35,32 @@ namespace Home.Core
             if (!isSandbox)
             {
                 GameModePopup?.Display(GameMode);
+            }
+            else
+            {
+                SetupGameMode();
+            }
+        }
+
+        public static void SetupGameMode()
+        {
+            // Set all pawn modes
+            foreach (int viewId in PlayerControllerViewIds)
+            {
+                PhotonNetwork.GetPhotonView(viewId).GetComponent<PlayerController>().SetGameModePawn(GameMode);
+            }
+            // Set mode specific state
+            if (GameMode == GameMode.Hns)
+            {
+                foreach (int viewId in PlayerControllerViewIds)
+                {
+                    PhotonView view = PhotonNetwork.GetPhotonView(viewId);
+                    ((HideAndSeekPawn)view.GetComponent<PlayerController>().ControlledPawn).IsSeeker = false;
+                }
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    ((HideAndSeekPawn)LocalPlayer.ControlledPawn).PickSeeker();
+                }
             }
         }
     }
