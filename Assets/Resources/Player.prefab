@@ -760,7 +760,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5737664590542388074}
-  - {fileID: 1679345655568466937}
+  - {fileID: 4955542033209234017}
   m_Father: {fileID: 7868478730424322163}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1637,7 +1637,7 @@ Transform:
   m_Children:
   - {fileID: 5733040793839132926}
   - {fileID: 8841887011506414506}
-  - {fileID: 2864116285030312394}
+  - {fileID: 6530816235019186077}
   - {fileID: 8613068631940623136}
   m_Father: {fileID: 7868478730424322163}
   m_RootOrder: 1
@@ -1684,11 +1684,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5065ae8f2be0f43892b4e7cd2c0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraView: {fileID: 2864116285030312684}
+  cameraView: {fileID: 4148841857617539992}
   dartPrefab: {fileID: 3352607809141148478, guid: 8d17ac5d4ca860947b1df9cf85506750,
     type: 3}
   dartCount: 60
-  dartSpawn: {fileID: 2864116285030312592}
+  dartSpawn: {fileID: 201672676207487144}
   moveSpeed: 6
   rotationSpeed: 1
   pointsPerHit: 10
@@ -1988,7 +1988,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6206685408858759580, guid: 9ac886a9e7f521a49a98fcc4102fdc57, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9ac886a9e7f521a49a98fcc4102fdc57, type: 3}
---- !u!4 &1679345655568466937 stripped
+--- !u!4 &4955542033209234017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6020086475104001100, guid: 9ac886a9e7f521a49a98fcc4102fdc57,
     type: 3}
@@ -2082,19 +2082,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0f9a1b592685554438aaee31e077212b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa519ccc204f9af4bb7e1c75401394b1, type: 3}
---- !u!4 &2864116285030312394 stripped
+--- !u!4 &6530816235019186077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9015498736549791818, guid: fa519ccc204f9af4bb7e1c75401394b1,
     type: 3}
   m_PrefabInstance: {fileID: 2864116285030311895}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2864116285030312684 stripped
+--- !u!4 &4148841857617539992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2174331686206313551, guid: fa519ccc204f9af4bb7e1c75401394b1,
     type: 3}
   m_PrefabInstance: {fileID: 2864116285030311895}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2864116285030312592 stripped
+--- !u!4 &201672676207487144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2698534330750947199, guid: fa519ccc204f9af4bb7e1c75401394b1,
     type: 3}

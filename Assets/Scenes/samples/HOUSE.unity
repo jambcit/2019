@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -191,6 +191,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SandboxInteractableObject (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3640977181261984977, guid: 0eaf4042b7c199f469edf52054a2f3b9,
+        type: 3}
+      propertyPath: m_Text
+      value: Dart Wars
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.386
+      objectReference: {fileID: 0}
     - target: {fileID: 3640977182661699922, guid: 0eaf4042b7c199f469edf52054a2f3b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,21 +270,6 @@ PrefabInstance:
         type: 3}
       propertyPath: isInteractable
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.988
-      objectReference: {fileID: 0}
-    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.386
-      objectReference: {fileID: 0}
-    - target: {fileID: 3640977181261984977, guid: 0eaf4042b7c199f469edf52054a2f3b9,
-        type: 3}
-      propertyPath: m_Text
-      value: Dart Wars
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eaf4042b7c199f469edf52054a2f3b9, type: 3}
@@ -1404,6 +1404,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: SandboxInteractableObject
       objectReference: {fileID: 0}
+    - target: {fileID: 3640977181261984977, guid: 0eaf4042b7c199f469edf52054a2f3b9,
+        type: 3}
+      propertyPath: m_Text
+      value: Hide and Seek
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.39
+      objectReference: {fileID: 0}
     - target: {fileID: 3640977182661699922, guid: 0eaf4042b7c199f469edf52054a2f3b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1468,26 +1488,6 @@ PrefabInstance:
         type: 3}
       propertyPath: isInteractable
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 3640977181261984979, guid: 0eaf4042b7c199f469edf52054a2f3b9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 3640977181261984977, guid: 0eaf4042b7c199f469edf52054a2f3b9,
-        type: 3}
-      propertyPath: m_Text
-      value: Hide and Seek
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eaf4042b7c199f469edf52054a2f3b9, type: 3}
@@ -5178,6 +5178,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 173951845433394628, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494479115002937525, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494479115002937525, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -32.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439078335625614623, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439078335625614623, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439078335625614623, guid: d8d84d43bf48f134c9ba9569c9e0ad87,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8d84d43bf48f134c9ba9569c9e0ad87, type: 3}

@@ -16,6 +16,7 @@ namespace Home.UI
             gameObject.SetActive(true);
             this.callback = callback;
             this.canvas.GetComponent<Canvas>().worldCamera = Camera.main;
+            this.canvas.GetComponent<Canvas>().planeDistance = 0.31f;
             this.timerText = this.timer.GetComponent<Text>();
             this.seconds = seconds;
             this.timerText.text = FormatTimeString();
@@ -40,8 +41,8 @@ namespace Home.UI
 
         private string FormatTimeString()
         {
-            int minutes = ((int)seconds) % 60;
-            return minutes + ":" + (int)seconds;
+            int secs = (int)(seconds % 60);
+            return ((int)seconds / 60) + ":" + secs;
         }
     }
 }
