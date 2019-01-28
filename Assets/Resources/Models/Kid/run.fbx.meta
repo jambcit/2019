@@ -188,7 +188,7 @@ ModelImporter:
       name: Running
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 200
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -207,7 +207,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.13603818
+        functionName: TriggerAudio
+        data: PlayerRun
+        objectReferenceParameter: {fileID: 11500000, guid: 291399a29b3d32a4992f3998f0a2c09d,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.38245824
+        functionName: TriggerAudio
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 291399a29b3d32a4992f3998f0a2c09d,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -236,7 +252,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 0.19999999
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
