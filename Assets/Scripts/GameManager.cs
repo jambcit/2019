@@ -59,9 +59,19 @@ namespace Home.Core
                 }
                 if (PhotonNetwork.IsMasterClient)
                 {
+                    LocalPlayer.TimerCanvas.Initialize(300, SetToSandbox);
                     ((HideAndSeekPawn)LocalPlayer.ControlledPawn).PickSeeker();
                 }
+                else
+                {
+                    LocalPlayer.TimerCanvas.Initialize(300);
+                }
             }
+        }
+
+        private static void SetToSandbox()
+        {
+            UpdateGameMode(GameMode.Sandbox);
         }
     }
 }
