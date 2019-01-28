@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Home.UI;
+using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
@@ -8,6 +9,8 @@ namespace Home.Core
     {
         [SerializeField] private List<Pawn> myPawns;
         [SerializeField] private List<string> registeredAxes;
+
+        public GameTimer TimerCanvas { get; set; }
         public Pawn ControlledPawn { get; private set; }
         private Dictionary<string, bool> lastFrame = new Dictionary<string, bool>();
         private Dictionary<string, bool> currentFrame = new Dictionary<string, bool>();
@@ -69,6 +72,7 @@ namespace Home.Core
         {
             if (info.photonView.IsMine)
             {
+                TimerCanvas = GameObject.Find("TimerCanvas").GetComponent<GameTimer>();
                 foreach (Pawn pawn in myPawns)
                 {
                     pawn.Initialize(this);
