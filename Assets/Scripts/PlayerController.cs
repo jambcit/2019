@@ -79,6 +79,7 @@ namespace Home.Core
                 foreach (Pawn pawn in myPawns)
                 {
                     pawn.Initialize(this);
+                    pawn.SetName(info.Sender.NickName);
                 }
                 
                 info.Sender.SetCustomProperties(new ExitGames.Client.Photon.Hashtable {
@@ -90,8 +91,10 @@ namespace Home.Core
                 foreach (Pawn pawn in myPawns)
                 {
                     pawn.InitializeRemote();
+                    pawn.SetName(info.Sender.NickName);
                 }
             }
+
             SetGameModePawn(GameManager.GameMode);
             GameManager.PlayerControllerViewIds.Add(info.photonView.ViewID);
         }
