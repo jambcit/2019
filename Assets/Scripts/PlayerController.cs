@@ -74,7 +74,7 @@ namespace Home.Core
             GameManager.Hud.AddPlayer(info.Sender.UserId, info.Sender.NickName, score);
             if (info.photonView.IsMine)
             {
-                TimerCanvas = GameObject.Find("TimerCanvas").GetComponent<GameTimer>();
+                //TimerCanvas = GameObject.Find("TimerCanvas").GetComponent<GameTimer>();
                 foreach (Pawn pawn in myPawns)
                 {
                     pawn.Initialize(this);
