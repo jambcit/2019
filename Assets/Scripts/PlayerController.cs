@@ -67,6 +67,8 @@ namespace Home.Core
 
         public void OnPhotonInstantiate(PhotonMessageInfo info)
         {
+            int score = (int)info.Sender.CustomProperties["score"];
+            GameManager.Hud.AddPlayer(info.Sender.UserId, info.Sender.NickName, score);
             if (info.photonView.IsMine)
             {
                 foreach (Pawn pawn in myPawns)

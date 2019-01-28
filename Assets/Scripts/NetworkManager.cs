@@ -87,8 +87,22 @@
             }
         }
 
+        public void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            
+        }
+
+        public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
+        {
+            if (changedProps.ContainsKey("score"))
+            {
+                GameManager.Hud?.UpdateScore(targetPlayer.UserId, (int)changedProps["score"]);
+            }
+        }
+
         public void OnPlayerLeftRoom(Player otherPlayer)
         {
+            GameManager.Hud.RemovePlayer(otherPlayer.UserId);
             for (int view = 0; view < GameManager.PlayerControllerViewIds.Count; view++)
             {
                 if (GameManager.PlayerControllerViewIds[view] == (int)otherPlayer.CustomProperties["id"])
@@ -115,8 +129,6 @@
         public void OnJoinedLobby() {}
         public void OnLeftLobby() {}
         public void OnLobbyStatisticsUpdate(List<TypedLobbyInfo> lobbyStatistics) {}
-        public void OnPlayerEnteredRoom(Player newPlayer) {}
-        public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps) {}
         public void OnMasterClientSwitched(Player newMasterClient) {}
     }
 }

@@ -18,7 +18,7 @@
             if (ValidPlayerName())
             {
                 string roomName = charNameInput.text + "'s Room";
-                RoomOptions roomOptions = new RoomOptions { MaxPlayers = 4 };
+                RoomOptions roomOptions = new RoomOptions { MaxPlayers = 4, PublishUserId = true };
                 PhotonNetwork.CreateRoom(roomName, roomOptions);
             }
         }
@@ -33,7 +33,12 @@
 
         public bool ValidPlayerName()
         {
-            return !string.IsNullOrEmpty(charNameInput.text);
+            if (!string.IsNullOrEmpty(charNameInput.text))
+            {
+                PhotonNetwork.LocalPlayer.NickName = charNameInput.text;
+                return true;
+            }
+            return false;
         }
 
         public void TogglePanel(GameObject obj)

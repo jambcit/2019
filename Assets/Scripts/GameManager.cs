@@ -13,6 +13,7 @@ namespace Home.Core
         public static PlayerController LocalPlayer { get; set; }
         public static GameMode GameMode { get; set; } = GameMode.Sandbox;
         public static GameModePopup GameModePopup { get; set; }
+        public static HUD Hud { get; set; }
         public static List<int> PlayerControllerViewIds { get; } = new List<int>();
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
