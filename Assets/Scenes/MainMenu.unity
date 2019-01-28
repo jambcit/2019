@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -896,28 +896,28 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BGMMainMenu
     clip: {fileID: 8300000, guid: f1b2d22461acf72458ad75c98fb271cc, type: 3}
-    volume: 1
+    volume: 0.2
     pitch: 1
     loop: 1
     spatialBlend: 0
     source: {fileID: 0}
   - name: BGMSandbox
     clip: {fileID: 8300000, guid: 1e133114d551f5243a2273f0503d454c, type: 3}
-    volume: 0.75
+    volume: 0.2
     pitch: 1
     loop: 1
     spatialBlend: 0
     source: {fileID: 0}
   - name: BGMFps
     clip: {fileID: 8300000, guid: 36ec64449050e1f46b39a2aebc70c16e, type: 3}
-    volume: 0.75
+    volume: 0.2
     pitch: 1
     loop: 1
     spatialBlend: 0
     source: {fileID: 0}
   - name: BGMHns
     clip: {fileID: 8300000, guid: e7c4f2f2ca5688441af8b30c8b844a70, type: 3}
-    volume: 0.75
+    volume: 0.2
     pitch: 1
     loop: 1
     spatialBlend: 0

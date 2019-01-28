@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 4487984058808878195}
   - component: {fileID: 7143012148783789127}
   - component: {fileID: 2513315944775362025}
+  - component: {fileID: 3488813571183623578}
   - component: {fileID: 4907273623281340467}
   m_Layer: 0
   m_Name: DronePawn
@@ -405,6 +406,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3488813571183623578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037947666068109974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb631d89964b2364fba42b28a72f1f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBGM: BGMHns
 --- !u!114 &4907273623281340467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +747,7 @@ GameObject:
   - component: {fileID: 2895271119404951531}
   - component: {fileID: 8065849179747136052}
   - component: {fileID: 7136791123495019434}
+  - component: {fileID: 707185544193457836}
   - component: {fileID: 3304209840842396755}
   - component: {fileID: 6830963377025102540}
   - component: {fileID: 4244533933759079669}
@@ -760,7 +775,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5737664590542388074}
-  - {fileID: 1679345655568466937}
+  - {fileID: 4955542033209234017}
   m_Father: {fileID: 7868478730424322163}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -838,6 +853,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &707185544193457836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139264192307303959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb631d89964b2364fba42b28a72f1f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBGM: BGMSandbox
 --- !u!114 &3304209840842396755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,6 +1639,7 @@ GameObject:
   - component: {fileID: 8841887011506413821}
   - component: {fileID: 8841887011506413608}
   - component: {fileID: 8841887011506413732}
+  - component: {fileID: 334576644329700870}
   - component: {fileID: 8841887011506413731}
   - component: {fileID: 8841887011506413730}
   - component: {fileID: 3561220205299962912}
@@ -1637,7 +1666,7 @@ Transform:
   m_Children:
   - {fileID: 5733040793839132926}
   - {fileID: 8841887011506414506}
-  - {fileID: 2864116285030312394}
+  - {fileID: 6530816235019186077}
   - {fileID: 8613068631940623136}
   m_Father: {fileID: 7868478730424322163}
   m_RootOrder: 1
@@ -1684,14 +1713,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5065ae8f2be0f43892b4e7cd2c0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraView: {fileID: 2864116285030312684}
+  cameraView: {fileID: 4148841857617539992}
   dartPrefab: {fileID: 3352607809141148478, guid: 8d17ac5d4ca860947b1df9cf85506750,
     type: 3}
   dartCount: 60
-  dartSpawn: {fileID: 2864116285030312592}
+  dartSpawn: {fileID: 201672676207487144}
   moveSpeed: 6
   rotationSpeed: 1
   pointsPerHit: 10
+--- !u!114 &334576644329700870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841887011506414323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb631d89964b2364fba42b28a72f1f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBGM: BGMFps
 --- !u!114 &8841887011506413731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1911,10 +1953,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7576399585116906876}
     m_Modifications:
-    - target: {fileID: 500845679, guid: 9ac886a9e7f521a49a98fcc4102fdc57, type: 3}
-      propertyPath: m_Name
-      value: SandboxKid
-      objectReference: {fileID: 0}
     - target: {fileID: 6020086475104001100, guid: 9ac886a9e7f521a49a98fcc4102fdc57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1970,6 +2008,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 500845679, guid: 9ac886a9e7f521a49a98fcc4102fdc57, type: 3}
+      propertyPath: m_Name
+      value: SandboxKid
+      objectReference: {fileID: 0}
     - target: {fileID: 1734821583861630901, guid: 9ac886a9e7f521a49a98fcc4102fdc57,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1988,7 +2030,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6206685408858759580, guid: 9ac886a9e7f521a49a98fcc4102fdc57, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9ac886a9e7f521a49a98fcc4102fdc57, type: 3}
---- !u!4 &1679345655568466937 stripped
+--- !u!4 &4955542033209234017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6020086475104001100, guid: 9ac886a9e7f521a49a98fcc4102fdc57,
     type: 3}
@@ -2082,21 +2124,21 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0f9a1b592685554438aaee31e077212b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa519ccc204f9af4bb7e1c75401394b1, type: 3}
---- !u!4 &2864116285030312394 stripped
+--- !u!4 &6530816235019186077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9015498736549791818, guid: fa519ccc204f9af4bb7e1c75401394b1,
     type: 3}
   m_PrefabInstance: {fileID: 2864116285030311895}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2864116285030312684 stripped
+--- !u!4 &201672676207487144 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2174331686206313551, guid: fa519ccc204f9af4bb7e1c75401394b1,
+  m_CorrespondingSourceObject: {fileID: 2698534330750947199, guid: fa519ccc204f9af4bb7e1c75401394b1,
     type: 3}
   m_PrefabInstance: {fileID: 2864116285030311895}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2864116285030312592 stripped
+--- !u!4 &4148841857617539992 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2698534330750947199, guid: fa519ccc204f9af4bb7e1c75401394b1,
+  m_CorrespondingSourceObject: {fileID: 2174331686206313551, guid: fa519ccc204f9af4bb7e1c75401394b1,
     type: 3}
   m_PrefabInstance: {fileID: 2864116285030311895}
   m_PrefabAsset: {fileID: 0}

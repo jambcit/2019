@@ -7816,8 +7816,25 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8573615531267010145, guid: b50fd714904c82f4298d7434ac077702,
+        type: 3}
+      propertyPath: scoreHolder
+      value: 
+      objectReference: {fileID: 1266241308}
+    - target: {fileID: 8573615531267010145, guid: b50fd714904c82f4298d7434ac077702,
+        type: 3}
+      propertyPath: playerScorePrefab
+      value: 
+      objectReference: {fileID: 8034426976511997322, guid: 1043e5906c667c7498c4ad80f30d3834,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b50fd714904c82f4298d7434ac077702, type: 3}
+--- !u!224 &1266241308 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1577178165695697806, guid: b50fd714904c82f4298d7434ac077702,
+    type: 3}
+  m_PrefabInstance: {fileID: 1266241307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1282351105
 PrefabInstance:
   m_ObjectHideFlags: 0
