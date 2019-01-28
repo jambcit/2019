@@ -39,6 +39,11 @@ namespace Home.Core
             AudioManager.instance.Play(currentBGM);
         }
 
+        void OnDisable()
+        {
+            AudioManager.instance.Stop(currentBGM);
+        }
+
         void OnDestroy()
         {
             AudioManager.instance.Stop(currentBGM);
