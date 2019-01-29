@@ -2,21 +2,21 @@
 Global Game Jam Vancouver 2019
 Version 0.0.1 (2019-01-28)
 
----Project Overview--------------------------------------------------------------------------------------------------------------------------
-
+### Project Overview
 3D Multiplayer Sandbox type Party Game with multiple game modes.
 his year our team is based on from the last year and we wanted to challenge ourselves and tried to make something different, not boring.
 After four hours of brainstormin, We came up with the ideas of hanging out with friends in the home during our childhood.
 All mutliplayable - Base game: sand box game mode - Drone game: inspired by Hide, Sick & Tag - Nerf Gun(FPS game): Inspired by shooting game
 
-Technology Notes: 
+Technology Note: 
 Unity, GitHub, Photon, Adobe Mixamo, Maya, Slack
 
+Build link: https://drive.google.com/drive/folders/1Ttxd8SAXiXgmO6TNa3JlkIcetr81DzPC?usp=sharing
 
-Created in Global Game Jam 2019 Vancouver
+From Global Game Jam 2019 Vancouver
 
 
----How the game works?------------------------------------------------------------------------------------------------------------------------
+### How the game works
 1. Create or Join the room, the room is max 4.
 2. You will start in the sandbox mode
 3. play with friends, and if you find some object that you can interact, hold "e" to fill the guage of the object.
@@ -29,7 +29,7 @@ Created in Global Game Jam 2019 Vancouver
 * Hope you can be generous and enjoy with the game :)
 
 
----Sandbox Overview & Input------------------------------------------------------------------------------------------------------------------------------
+### Sandbox Overview & Input
 Hang out with the friends and start the minigames!
 
 W,A,S,D: Moving refer to the direction
@@ -41,7 +41,7 @@ C: Crouching(toggle switchable)
 Space bar: Jumping
 
 
----NerfGun Overview & Input------------------------------------------------------------------------------------------------------------------------------
+### NerfGun Overview & Input
 Shoot and hit the dart to the friends and get more score!
 
 W,A,S,D: Moving refer to the direction
@@ -52,7 +52,7 @@ C: Crouching(toggle switchable)
 Space bar: Jumping (currently disabled)
 
 
----NerfGun Overview & Input------------------------------------------------------------------------------------------------------------------------------
+### Hide, Seek, & Tag Overview & Input
 Hide and seek the player and TAG!
 If a seeker tag everyone than, hiders lose.
 Only one Seeker, can tag the hiders by hitting.
@@ -64,20 +64,18 @@ Space: Move up
 left-shift: boost
 
 
----Credits------------------------------------------------------------------------------------------------------------------------------------
+### Credits
 Art & Assets
-
-Bill Oh
-Ching Choi
+- Bill Oh
+- Ching Choi
 
 
 Programming 
-
-Geoff McLennan
-Joshua Takeshi Abe
-Morris Arroyo
-Shawn Kim
-Tyler Da Costa
+- Geoff McLennan
+- Joshua Takeshi Abe
+- Morris Arroyo
+- Shawn Kim
+- Tyler Da Costa
 
 Special Thank you to Dan from Tree of Sound
-DAN MURRAY <CANUCKBOY@GMAIL.COM>
+- DAN MURRAY <CANUCKBOY@GMAIL.COM>
